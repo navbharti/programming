@@ -39,8 +39,7 @@ We can also join two strings using the + operator in Java. To learn more, visit 
     // compare first and third strings
     boolean result2 = first.equals(third);
     System.out.println("Strings first and third are equal: " + result2);
-  }
-}
+    
 ```
 
 * `==` checks if the reference to string objects are equal or not. Here, name1 and name2 are two different references. Hence, it returns false.
