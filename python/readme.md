@@ -1,7 +1,7 @@
 # Object Oriented Programming in Python
-1. [LANGUAGE FUNDAMENTALS](PythonNotes.md)
+1. [LANGUAGE FUNDAMENTALS](sessions/session1.md) [Intro Part2](intro.md)
 1. [IDENTIFIERS](identifier.md)
-1. [RESERVED WORDS](intro.md)
+1. [RESERVED WORDS]()
 1. DATA TYPES
 1. TYPE CASTING
 1. [INPUT AND OUTPUT](notes_input_output.md)
