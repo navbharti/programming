@@ -1,6 +1,28 @@
-# Session One
+# Session One - Fundamental of Computer Programming
+`Data` : The unorganized raw fact and figure which alone dones not have any meaning and generally useless is called data. Data can be of two types `Qualitative Data` and `Quantative Data`.
 
-# Introduction to Course Handout
+`Information` : The processed and organized data, which is usefull, meaningful and gives some context is called information.
+
+`Knowledge`: The process of recalling information from past experience is called Knowledge. Organization and Evaluation of information produces Knowledge. Generally Knowledge can be of two types, `Fact-Based Knowldge` and `Heuristic Knowledge`. 
+
+`Intelligence` : Combination of knowledge and ability to think and percieve something is called Intelligence. Intelligence can be of Natural-Intelligence (Human Intelligence) and Unnatural-Intelligence (Artificial Intelligence). When the features and characteristics of being intelligent is with the Human/Living being is called `Natural-Intelligence (Human Intelligenc)` and when the features and characteristics of being intelligent is kept in some non-living things (also called Human made i.e. Computer) is called `Artificial Intelligence`.
+
+Let's understand the concept of `Computer Programming Language`. Before that lets talk about literla meaning of Language. 
+
+`Language` : Language is a medium to do Communication between/among people/living being. What we use to do communicate to each other is called `Natural Language`.
+
+`Communication` : The process of exchanging information, views, opinion from one person to another persion is called `Communicating` to each other and this phenomenon is called Communication. Communication can be done using Verbal medium (`Verbal Language`) or Non-Verbal medium (`Non-Verbal Language`). 
+
+We do communication with Computer so that computer can do some task for us. For this we use some Language (medium) to communicate with computer. This type of language is called `Computer Language` and this is different from Natural Language. Generally Computer Language is `programmable` (possible to do programming) so called `Computer Programming Language`. 
+
+`Program` : Set of  Instructions arranged in some sequence to do particular task using Computer Programming Language is called program. 
+
+`Instruction` : Instructions are simply order given to computer processor. It instructs the computer to take some descrete action.
+
+`Software` : Collection of different programs collectively for particular purpose in same context is called Software. 
+
+`Application` : Collection of Softwares/Programs bundled togeter have same context is called Application. For example MS-office is having collection of different Software/Programs with same context. 
+
 
 # Basics of Computer
 `Definition`: Computer is an electronic device which takes some input through Input Devices and gives output through Output Devices after perform the given tasks in the form of instruction. In short a computer is an electronic device that stores and processes data. A computer includes both hardware and software.
@@ -93,4 +115,3 @@ Python was created by Guido van Rossum in the Netherlands in 1990 and was named 
 # Interactive Mode vs Scripting Mode in Python
 Assume you have Python installed on the Windows OS. You can start Python in a command window by typing python at the command prompt. This way of launching python is called **Interactive Mode**. 
 Other way to open python is called scripting mode by launching IDLE. **IDLE (Interactive DeveLopment Environment)** is an integrated development environment (IDE) for Python. You can create, open, save, edit, and run Python programs in IDLE. Both the command-line Python interpreter and IDLE are available after Python is installed on your machine.
-
