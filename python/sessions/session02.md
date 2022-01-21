@@ -1,96 +1,294 @@
-# Session One
+# Session Two: Introductiont to Python
 
-# Introduction to Course Handout
+`Python` is a `general-purpose`, `high level programming language`, `object-oriented programming language` created by `Guido van Rossum` in `1991` and further developed by the `Python Software Foundation`. It is also called `general-purpose programming language` that is designed for a code readability, and possible to write bigger program in fewer lines of code. There are two major Python versions: `Python 2` and `Python 3`. Both are quite different.
 
-# Basics of Computer
-`Definition`: Computer is an electronic device which takes some input through Input Devices and gives output through Output Devices after perform the given tasks in the form of instruction. In short a computer is an electronic device that stores and processes data. A computer includes both hardware and software.
+![](../images/interactivescript.jpeg)
 
-## Hardware and Software 
-All the physical components in the computer are called Hardware Devices which can be touched and made of material. There are different hardware devices Ex. Monitor, Keyboard, Mouse, Projector, Printer etc these all are physical component by nature. 
+## Interactive Mode of Execution
 
-In general, hardware comprises the visible, physical elements of the computer, and software provides the invisible instructions that control the hardware and make it perform specific tasks. 
+Basic Operations in Interactive Mode
+```python
+>>> print("Hello World")
+Hello World
+>>> 3 + 5
+8
+>>> 3 - 5
+-2
+>>> 3 * 5
+15
+>>> 3 / 5
+0.6
+>>> 12 % 5
+2
+```
 
-Knowing computer hardware helps you better understand the effects that a program’s instructions have on the computer and its components.
+Create Variable in Python
 
-Hardware Devides can be broadly categorised into the following categories:
-![](../images/iodevices.png)
-1. `A central processing unit (CPU)`: The **central processing unit (CPU)** is the computer’s **brain**. It retrieves **instructions** from memory and executes them. The CPU usually has two components: a **control unit (CU)** and an **arithmetic and logical unit (ALU)**. The control unit **controls and coordinates** the actions of the other components. The arithmetic/logic unit performs **numeric operations** (addition, subtraction, multiplication, division) and **logical operations** (comparisons).
+```python
+>>> a = 3
+>>> print(a)
+3
+>>> b = 5
+>>> print(b)
+5
+>>> a
+3
+>>> b
+5
+>>> a + b
+8
+>>> a - b
+-2
+>>> a * b
+15
+>>> a / b
+0.6
+>>> c = 12
+>>> c % 5
+2
 
-2. `Memory (main memory)`: Before we discuss **memory**, let’s look at how **information (data and programs)** are stored in a computer. A computer is really nothing more than a series of switches. Where each switch exists in two states: on or off. Storing information in a computer is simply a matter of setting a sequence of switches on or off. If the switch is on, its value is 1. If the switch is off, its value is 0. These 0s and 1s are interpreted as digits in the binary number system and called bits (binary digits). The **minimum storage unit** in a computer is a byte. A **byte** is composed of eight bits. A small number such as 3 can be stored as a single byte. To store a number that cannot fit into a single byte, the computer uses several bytes.
-* Smallest Unit of momory is 1 bit and 
-* A nibble = 4 bits
-* A byte = 8 bits or 2 nibbles
-* A kilobyte (KB) = 1024 bytes.
-* A megabyte (MB) = 1024 KB.
-* A gigabyte (GB) = 1024 MB.
-* A terabyte (TB) = 1024 GB.
-A typical one-page word document might take 20 KB. So 1 MB can store 50 pages of documents and 1 GB can store 50000 pages of documents. A typical two-hour high-resolution movie might take 8 GB. So it would require 160 GB to store 20 movies.
-A computer’s memory consists of an ordered sequence of bytes for storing programs as well as data that the program is working with.
-A program and its data must be moved into the computer’s memory before they can be executed by the CPU. 
-Every byte in the memory has a unique address. The address is used to locate the byte for storing and retrieving the data. Since the bytes in the memory can be accessed in any order, the memory is also referred to as random-access memory (RAM).
-![](../images/memory.png)
+>>> a = input()
+12
+>>> b = input()
+20
+>>> a
+'12'
+>>> b
+'20'
+>>> a + b
+'1220'
+>>> a - b
+Traceback (most recent call last):
+  File "<pyshell#50>", line 1, in <module>
+    a - b
+TypeError: unsupported operand type(s) for -: 'str' and 'str'
+>>> n1 = int(a)
+>>> n2 = int(b)
+>>> n1
+12
+>>> n2
+20
+>>> n1 + n2
+32
+>>> n1 - n2
+-8
+>>> n1 * n2
+240
+>>> n1 / n2
+0.6
+>>> n1 % n2
+12
+```
+Program to read two Integer values and print the sum.
+```python
+>>> a = input("Enter First Number: ")
+Enter First Number: 12
+>>> n1 = int(a)
+>>> b = input("Enter Second Number: ")
+Enter Second Number: 32
+>>> n2 = int(b)
+>>> add = n1 + n2
+>>> print("Addition is ", add)
+Addition is  44
 
-3. `Storage devices (such as disks and CDs)`:
-■ Magnetic disk drives
-■ Optical disc drives (CD and DVD)
-■ USB flash drives
+```
 
-4. `Communication devices (such as modems and network interface cards)`
+## Scripting Mode of Execution
 
-1. `Input Devices`: Those all hardware devices which are used to take some input to the computer are called Input Devices Ex. Keyboard, Mic, WebCamera, Digital Pen, Scanner etc.
+1. open IDLE
+![](../images/Searchforpython.png)
+2. create new file from File Menu
+![](../images/newfile.png)
+3. Type python code in the file
+```python
+a = input("Enter First Number: ")
+n1 = int(a)
+b = input("Enter Second Number: ")
+n2 = int(b)
+add = n1 + n2
+print("Resutl is ", add)
+```
+4. Save the file with .py extension
+![](../images/savepython.png)
+5. Run the code using option `Run Module` in `Run` menu
+![](../images/runmenu.png)
+![](../images/runmodule.png)
 
-2. `Output Devices`: Those all hardware devices which produces some output from computer are called Output Devices Ex. Monitor, Speaker, Printer, Projector etc.
+## Datatype in Python
+1. int
+2. float
+3. string
+4. complex
+5. list
+6. tuple
+7. set 
+8. dictionary
 
-3. `Storage Devices`: Those all hardware devices which are used to store data called storage devices Ex. Pendrive, Hard Drive, CD, DVD etc.
+![](../images/datatypes-in-python.jpeg)
 
-4. `Processing Device`: Processor is hardware divice which is used for computation/processing also called brain of computer.
+## 1. Interger Datatype in Python
+![](../images/numbersystem.jpeg)
 
-`Note`: A computer’s components are interconnected by a subsystem called a bus..
+Creating Integer Variable
+```python
+>>> d = 10 #base-10 integer
+>>> print(d)
+10
+>>> b = 0b1011 #base-2 integer
+>>> print(b)
+11
+>>> o = 0o75 #base-8 integer
+>>> print(o)
+61
+>>> h = 0xF2A #base-16 integer
+>>> print(h)
+3882
 
-## Software Types
-Software is non-physical part of computer which makes computer function and perform task which we want the computer to do. It is a piece or collection of codes/instructions which collectively do a particular task. Software can be for functioning or managing Computer Hardware as well as for the purpose of User. The Software used for computer purposes called System Software and the software used for user purposes is called Application Software. System Software can further be categoried as Operating Software (OS) and Utility Software. The Operating Software is the software which makes our Computer devices and other software function well. 
-`Note`: These software is created by using some Computer programming.
+```
+Integers can be binary, octal, and hexadecimal values.
 
-# Basics of Computer Programming
+Leading zeros in non-zero integers are not allowed e.g. 000123 is invalid number, 0000 is 0.
 
-## What is a Program?
-Software contains the instructions that tell a computer—or a computerized device—what to do? If we want to tell the computer to do some task, we tell by giving instruction also called the smallest unit of software. Programm is a collection of instruction to perform a particular task. 
+Use underscore _ as a delimiter instead.
+```python
+>>> x=1_234_567_890
+>>> x
+1234567890
+```
 
-## What is Programming Language?
-**Software developers** create software with the help of powerful tools called **programming languages**. In other word, if we want to give some instructions to the computer to do some taks, we need to communicate to the computer so need of language comes into picture. **Language** is a medium using which two entities communicate to each other. Programing Language is the medium for communicating to computer, where entities can be Human to computer and computer to computer as well. There are differnt types of programming language as follows:
-1. **Low Level Language or Machine Language**: The language represented by 0s and 1s and direclty understood by computer is called Low Level or Machine language. 
-![](http://2.bp.blogspot.com/--yatT_dYXRU/Umva6useeII/AAAAAAAACfI/GIEkrt_B_qg/s1600/MemoryEditorI.jpg)
-2. **Assembly Language or Symbolic Language or Mnemobic Language**: The language written in the form of symbols.
-![](https://www.allbusiness.com/asset/image/glossaries/4967331.gif)
-3. **High Level Langauge** 
-![](https://qawithexperts.com/Images/Upload/23-10-2018/c-programming-examples-with-output-min.png)
-4. **Artificial Intelligence Language**
-![](https://i.pinimg.com/564x/26/53/f5/2653f5997695b079adb4263f1bb996a1.jpg)
+Writing Comment in Python Program
+```python
+#Hash symbol is used to write one liner comment
 
-## What is Programming Language Translator
-We give instruction to the computer through some programming language. Since computer unerstand the language represented by sequence of zeros and ones (0s and 1s) and we as human strugle learning this language we need to have something who knows both the language i.e. the language known by computer and the language known by human. The thing who knows both the language can be thought as language translator. The language translastors translates one language (source language) to other language (destination language). There are different types of programing language translators.
+'''
+three consequtive single quotation opening 
+and three consequtive single  quotation closing 
+is used for multiline comment.
+'''
 
-Types of Translator in Programming Language
-1. Assembler 
-2. Interpreter
-3. Compiler
-![](https://images.slideplayer.com/22/6392591/slides/slide_8.jpg)
-Interpreted vs Compiled Programming Language
-![](https://i.pinimg.com/originals/93/3b/61/933b615d3cbf01410c2bde75238828ad.png)
-Computer Programming Paradigm
 
-# The History of Python
-Python is a **general-purpose**, **interpreted**, **object-oriented programming language**.
+"""three consequtive single double quotation opening 
+and three consequtive single double quotation closing 
+is used for multiline comment.
+"""
+```
 
-Python was created by Guido van Rossum in the Netherlands in 1990 and was named after the popular British comedy troupe Monty Python’s Flying Circus.
-![](../images/interpreter.png)
- `(a)` An interpreter translates and executes a program one statement at a time. `(b)` A compiler translates the entire source program into a machine-language file for execution.
+### Base Conversion in Python
+```python
+>>> bin(10) #base-10 integer to base-2 integer conversion
+'0b1010'
+>>> bin(0o75) #base-8 integer to base-2 integer conversion
+'0b111101'
+>>> bin(0xF2A) #base-16 integer to base-2 integer conversion
+'0b111100101010'
+>>> oct(10) #base-10 integer to base-8 integer conversion
+'0o12'
+>>> oct(0b1111) #base-2 integer to base-8 integer conversion
+'0o17'
+>>> oct(0xf2a) #base-16 integer to base-8 integer conversion
+'0o7452'
+>>> hex(116) #base-10 integer to base-16 integer conversion
+'0x74'
+>>> hex(0b111101101101) #base-2 integer to base-16 integer conversion
+'0xf6d'
+>>> hex(0o7563) #base-8 integer to base-16 integer conversion
+'0xf73'
 
- Data in Python are **objects** created from **classes**. A class is essentially a **type** or **category** that defines objects of the same kind with **properties** and **methods** for manipulating objects. Object-oriented programming is a powerful tool for developing **reusable software**. 
+```
+NOTE: Python2 has int as well as long datatype. The range of int datatype in python2 is [-2^31 to 2^31 - 1] and there is no limitation of max value in case of long datatype in python2. In Python3, value of an integer is not restricted by the number of bits and can expand to the limit of the available memory.
 
- A Python program is executed from the Python interpreter.
+## 2. Float Datatype in Python
 
-# Interactive Mode vs Scripting Mode in Python
-Assume you have Python installed on the Windows OS. You can start Python in a command window by typing python at the command prompt. This way of launching python is called **Interactive Mode**. 
-Other way to open python is called scripting mode by launching IDLE. **IDLE (Interactive DeveLopment Environment)** is an integrated development environment (IDE) for Python. You can create, open, save, edit, and run Python programs in IDLE. Both the command-line Python interpreter and IDLE are available after Python is installed on your machine.
+floating point numbers (float) are positive and negative real numbers with a fractional part denoted by the decimal symbol . or the scientific notation E or e, e.g. 1234.56, 3.142, -1.55, 0.23.
 
+Floats can be separated by the underscore _, e.g. 123_42.222_013 is a valid float.
+
+Floats has the maximum size depends on your system. The float beyond its maximum size referred as "inf", "Inf", "INFINITY", or "infinity". Float 2e400 will be considered as infinity for most systems.
+
+## 3. String Datatype in Python
+```python 
+>>> s1 = "Hello World"
+>>> type(s1)
+<class 'str'>
+>>> s2 = 'Hello World'
+>>> type(s2)
+<class 'str'>
+>>> s3 = "Ram's Book"
+>>> print(s3)
+Ram's Book
+>>> s3
+"Ram's Book"
+>>> s4 = 'Ram"s Book'
+>>> s4
+'Ram"s Book'
+>>> print(s4)
+Ram"s Book
+
+```
+### Controlling fractional digits in floating point number
+
+```python
+>>> f = 3.123456789
+>>> f
+3.123456789
+>>> print(f)
+3.123456789
+>>> fround = round(f, 2)
+>>> fround
+3.12
+>>> print(fround)
+3.12
+
+>>> f_limited = "{:.2f}".format(f)
+>>> f_limited
+'3.12'
+>>> print(f_limited)
+3.12
+
+```
+## 4. Complex Datatype in Python
+
+A complex number is a number with real and imaginary components. For example, 5 + 6j is a complex number where 5 is the real component and 6 multiplied by j is an imaginary component.
+
+```python
+>>> a=5+2j
+>>> a
+(5+2j)
+>>> type(a)
+<class 'complex'>
+```
+### Arithmetic Operations on Complex Numbers
+
+```python
+>>> a=6+4j
+>>> a+2
+(8+4j)
+>>> a*2
+(12+8j)
+>>> a/2
+(3+2j)
+>>> a**2
+(20+48j)
+>>> b=3+2j
+>>> a+b    
+(9+6j)    
+>>> a-b    
+(3+2j)
+
+>>> a=6+4j
+>>> b=3+2j
+>>> a+b    
+(9+6j)    
+>>> a-b    
+(3+2j)
+>>> a*b    
+(10+24j)
+
+>>> a=6+4j             
+>>> b=3+2j             
+>>> c=a*b              
+>>> c=(6+4j)*(3+2j)    
+>>> c=(18+12j+12j+8*-1)
+>>> c=10+24j
+```
+Read more about Complex Number System [here](https://byjus.com/maths/complex-numbers/).
