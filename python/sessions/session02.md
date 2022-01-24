@@ -292,3 +292,5 @@ A complex number is a number with real and imaginary components. For example, 5 
 >>> c=10+24j
 ```
 Read more about Complex Number System [here](https://byjus.com/maths/complex-numbers/).
+
+Application of Complex Number [here](https://www.ukessays.com/essays/engineering/application-and-use-of-complex-numbers-engineering-essay.php).
