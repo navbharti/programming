@@ -1,4 +1,5 @@
-# Session Four: Control Flow Statement
+# Session Four: Control Flow Statement: Iteration: state, while, for, break, pass
+
 
 ![](../images/python-flow-control-statements.webp)
 
@@ -220,3 +221,77 @@ else: print("negative")
 
 [Mahasena](https://www.codechef.com/problems/AMR15A)
 
+
+# Exercise in List
+Find Duplicate Values using Python
+
+Sentence and Word Tokenization using Python
+
+
+Count Length of a String using Python
+
+Detect Questions using Python
+
+Index of Maximum Value in a Python List
+
+Index of Minimum Value in a Python List
+
+For Loop Over Keys and Values in a Python Dictionary
+
+Swap Items of a Python List
+
+Backward For Loop using Python
+
+LCM using Python
+
+Age Calculator using Python
+
+Python Program to Count Most Frequent Words in a File
+
+Python Program to Count Capital Letters in a File
+
+Python Program to Remove Spaces
+
+Python Program to Remove Odd or Even Numbers From a List
+
+End-to-End Encryption using Python
+
+
+Remove Duplicates from a Python List
+
+Sum of Elements of a Python List
+
+Print a Calendar using Python
+
+For Loop Over Two Lists in Python
+
+Swap Variables using Python
+
+Password Authentication using Python
+
+Python Program to Print Odd and Even Numbers
+
+Pick a Random Card using Python
+
+Remove Unicode Characters using Python
+
+Count Character Occurrences using Python
+
+Create Acronyms using Python
+
+Text-Based Adventure Game with Python
+
+Create a Contact Book using Python
+
+Palindrome Words using Python
+
+Format Dates using Python
+
+
+Python Program to Check Vowel
+
+Dice Roll Simulator with Python
+
+Multiple Inputs with Python using While Loop
+
+Python Program to Convert Roman Numbers to Decimals
