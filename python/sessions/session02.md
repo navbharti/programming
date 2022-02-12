@@ -1,4 +1,4 @@
-# Session Two: Introductiont to Python
+# Session Two: Introductiont to Python, Data types, Conditionals: Boolean values and operators, operator precedence and comments variables, expressions, statements
 
 `Python` is a `general-purpose`, `high level programming language`, `object-oriented programming language` created by `Guido van Rossum` in `1991` and further developed by the `Python Software Foundation`. It is also called `general-purpose programming language` that is designed for a code readability, and possible to write bigger program in fewer lines of code. There are two major Python versions: `Python 2` and `Python 3`. Both are quite different.
 
@@ -79,7 +79,9 @@ TypeError: unsupported operand type(s) for -: 'str' and 'str'
 >>> n1 % n2
 12
 ```
+
 Program to read two Integer values and print the sum.
+
 ```python
 >>> a = input("Enter First Number: ")
 Enter First Number: 12
@@ -96,10 +98,15 @@ Addition is  44
 ## Scripting Mode of Execution
 
 1. open IDLE
+
 ![](../images/Searchforpython.png)
+
 2. create new file from File Menu
+
 ![](../images/newfile.png)
+
 3. Type python code in the file
+
 ```python
 a = input("Enter First Number: ")
 n1 = int(a)
@@ -108,10 +115,15 @@ n2 = int(b)
 add = n1 + n2
 print("Resutl is ", add)
 ```
+
 4. Save the file with .py extension
+
 ![](../images/savepython.png)
+
 5. Run the code using option `Run Module` in `Run` menu
+
 ![](../images/runmenu.png)
+
 ![](../images/runmodule.png)
 
 ## Datatype in Python
@@ -127,9 +139,11 @@ print("Resutl is ", add)
 ![](../images/datatypes-in-python.jpeg)
 
 ## 1. Interger Datatype in Python
+
 ![](../images/numbersystem.jpeg)
 
 Creating Integer Variable
+
 ```python
 >>> d = 10 #base-10 integer
 >>> print(d)
@@ -150,6 +164,7 @@ Integers can be binary, octal, and hexadecimal values.
 Leading zeros in non-zero integers are not allowed e.g. 000123 is invalid number, 0000 is 0.
 
 Use underscore _ as a delimiter instead.
+
 ```python
 >>> x=1_234_567_890
 >>> x
@@ -157,6 +172,7 @@ Use underscore _ as a delimiter instead.
 ```
 
 Writing Comment in Python Program
+
 ```python
 #Hash symbol is used to write one liner comment
 
@@ -195,7 +211,8 @@ is used for multiline comment.
 '0xf73'
 
 ```
-NOTE: Python2 has int as well as long datatype. The range of int datatype in python2 is [-2^31 to 2^31 - 1] and there is no limitation of max value in case of long datatype in python2. In Python3, value of an integer is not restricted by the number of bits and can expand to the limit of the available memory.
+
+`NOTE`: Python2 has int as well as long datatype. The range of int datatype in python2 is [-2^31 to 2^31 - 1] and there is no limitation of max value in case of long datatype in python2. In Python3, value of an integer is not restricted by the number of bits and can expand to the limit of the available memory.
 
 ## 2. Float Datatype in Python
 

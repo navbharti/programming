@@ -1,4 +1,4 @@
-# Session Three
+# Session Three: conditional (if), alternative (if-else), chained conditional (if-elif-else)
 
 ## Mensuration Implementation is Python
 
