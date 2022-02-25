@@ -251,3 +251,124 @@ Number of values you want to input: Input 5 values
 Minimum value is: 11
 Maximum value is: 65 
 ```
+
+
+# List Coprehension Exercise:
+    
+## 1. create a list with given n using list comprehension technique
+
+Input:
+
+n = 10
+
+Output:
+
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+## 2. create a list with Squres from the above list
+
+Input:
+
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+Output:
+
+sqrLst =  [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+## 3. create a list with cubes from the given list
+Input:
+
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+Output:
+
+cubeList = [1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
+
+## 4. create a list of cumulative sum of natural number from the given list
+Input:
+
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+Output:
+
+cumulative = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55]
+    
+## 5. create list of factorial of given list
+Input:
+
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+Output:
+
+fact = [1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800]
+
+Hint: use
+'''
+def multiply(inList):
+    multi = 1
+    for a in inList:
+        multi *= a
+    return multi
+'''
+
+## 6. Find all of the numbers from 1-1000 that are divisible by 7
+Output:
+
+list7 = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98]
+
+## 7. Find all of the words in a string that are less than 4 letters
+Input:
+
+text = "On a summer day somner smith went simming in the sun and his red skin stung"
+
+Output:
+
+text4 = ['On', 'a', 'day', 'in', 'the', 'sun', 'and', 'his', 'red']
+
+## 8. Produce a list of tuples consisting of only the matching numbers in these lists list_a = [1, 2, 3,4,5,6,7,8,9], list_b = [2, 7, 1, 12].  
+
+Result would look like (4,4), (12,12)
+
+
+## 9. Get only the numbers in a sentence like 'In 1984 there were 13 instances of a protest with over 1000 people attending'.  
+
+Result is a list of numbers like [3,4,5]
+
+Input:
+
+text = 'In 1984 there were 13 instances of a protest with over 1000 people attending'
+
+Output:
+
+['1984', '13', '1000']
+
+## 10. Find the common numbers in two lists (without using a tuple or set) list_a = [1, 2, 3, 4], list_b = [2, 3, 4, 5]
+Input:
+
+list_a = [1, 2, 3, 4]
+list_b = [2, 3, 4, 5]
+
+Output:
+[2, 3, 4]
+
+## 11. Create a list of all the consonants in the string "Yellow Yaks like yelling and yawning and yesturday they yodled while eating yuky yams"
+
+Input:
+
+text = "Yellow Yaks like yelling and yawning and yesturday they yodled while eating yuky yams"
+
+Ouput:
+
+['Y', 'l', 'l', 'w', 'Y', 'k', 's', 'l', 'k', 'y', 'l', 'l', 'n', 'g', 'n', 'd', 'y', 'w', 'n', 'n', 'g', 'n', 'd', 'y', 's', 't', 'r', 'd', 'y', 't', 'h', 'y', 'y', 'd', 'l', 'd', 'w', 'h', 'l', 't', 'n', 'g', 'y', 'k', 'y', 'y', 'm', 's']
+
+
+## 12. Count the number of spaces in a string
+
+Input:
+
+text = 'the slow solid squid swam sumptuously through the slimy swamp'
+
+Ouput:
+
+9
+
