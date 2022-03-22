@@ -47,7 +47,7 @@ class Square(GeometricShape):
         return s
 ```
 
-## Circle Chile-Class of GeometricShape Class
+## Circle Child-Class of GeometricShape Class
 
 ```python
 #child class
@@ -76,7 +76,7 @@ class Circle(GeometricShape):
 
 ```
 
-## Rectangle Chile-Class of Square Class
+## Rectangle Child-Class of Square Class
 
 ```python
 #child class Rectangle
@@ -108,6 +108,7 @@ class Rectangle(Square):
         return s
  ```
 
+## Test-Code
 
  ```python
 if __name__=="__main__":
@@ -121,6 +122,7 @@ if __name__=="__main__":
     print()
 ```
 
+## Test-Code
 ```python
 if __name__=="__main__":
     circle = Circle()
@@ -134,6 +136,7 @@ if __name__=="__main__":
     
 ```
 
+## Test-Code
 ```python
 if __name__=="__main__":
 
