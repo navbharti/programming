@@ -5,7 +5,28 @@
 ## Session-2 Searching Algorithms
 
 ### 1. Linear Search Algorithm
+```python
+def linearSearch(arr, key):
+    count = 0
+    i = 0
+    while i< len(arr):
+        count += 1
+        if arr[i] == key:
+            return i, count
+        i = i + 1
+    return None, count
 
+#test code
+if __name__=="__main__":
+    a = list(map(int, input("Enter space seperated values: ").split()))
+    key = int(input("Enter the search key: "))
+    ans = linearSearch(a, key)
+    if ans[0] != None:
+        print(f"{key} is found at index: {ans[0]} with iterations {ans[1]}")
+    else:
+        print(f"{key} is not found with iterations {ans[1]}")
+
+```
 
 
 

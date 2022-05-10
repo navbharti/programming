@@ -21,6 +21,7 @@ class GeometricShape:
     def setDim(self, dim):
         self.dim = dim
 ```
+
 ## Square Child-Class of GeometricShape Class
 
 ```python

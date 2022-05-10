@@ -1,0 +1,1 @@
+this file is for testing purpose for static folder in mysite project.

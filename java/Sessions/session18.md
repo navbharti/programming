@@ -1,0 +1,1 @@
+# Session Eighteen: Singleton classes.

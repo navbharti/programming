@@ -1,0 +1,1 @@
+# Session Twenty Six: Anonymous classes, Decorator pattern
