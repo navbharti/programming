@@ -227,3 +227,51 @@ if __name__=="__main__":
         print(f"{key} is not found")
 
 ```
+
+#### Finding total Occurrences if key
+
+```python
+
+def binarySearchOccurrences(arr, key):
+    left, right = 0, len(arr) - 1
+    mid_index = 0
+    while left <= right:
+        mid_index = (left + right) // 2
+        if arr[mid_index] == key:
+            #return mid_index
+            break
+        elif key < arr[mid_index]:
+            right = mid_index - 1
+        elif key > arr[mid_index]:
+            left = mid_index + 1
+
+    #logic to trace right most key
+    rightmost = mid_index + 1
+    while rightmost <= len(arr)-1:
+        if arr[rightmost] != key:
+            rightmost = rightmost - 1
+            break
+        rightmost = rightmost + 1
+
+    #logic to trace left most key
+    leftmost = mid_index - 1
+    while leftmost >= 0:
+        if arr[leftmost] != key:
+            leftmost = leftmost + 1
+            break
+        leftmost = leftmost - 1
+    print(f"rightmost: {rightmost} and leftmost: {leftmost}")
+    return rightmost - leftmost + 1
+        
+
+#test code
+if __name__=="__main__":
+    a = list(map(int, input("Enter space seperated values: ").split()))
+    key = int(input("Enter the search key: "))
+    ans = binarySearchOccurrences(a, key)
+    if ans != 0:
+        print(f"{key} occurs : {ans} many times!!!")
+    else:
+        print(f"{key} is not found")
+
+```
