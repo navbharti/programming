@@ -96,7 +96,28 @@ if __name__=="__main__":
         print(f"{key} is not found with iterations {ans[1]}")
 
 ```
+#### Linear Search - Recursive
 
+```python
+def linearSearch(arr, n, key):
+    if n < 0:
+        return None
+    if arr[n] == key:
+        return n
+    n = n - 1
+    return linearSearch(arr, n, key)
+
+#test code
+if __name__=="__main__":
+    a = list(map(int, input("Enter space seperated values: ").split()))
+    key = int(input("Enter the search key: "))
+    ans = linearSearch(a, len(a)-1, key)
+    if ans != None:
+        print(f"{key} is found at index: {ans}")
+    else:
+        print(f"{key} is not found")
+
+```
 
 
 ### 2. Binary Search Algorithm
