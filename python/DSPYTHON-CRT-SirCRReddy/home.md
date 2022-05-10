@@ -150,3 +150,41 @@ if __name__=="__main__":
         print(f"{key} is not found")
 
 ```
+
+#### Finding the First occurrence index of key value
+
+```python
+def binarySearch(arr, key):
+    left, right = 0, len(arr) - 1
+    mid_index = 0
+    while left <= right:
+        mid_index = (left + right) // 2
+        if arr[mid_index] == key:
+            #return mid_index
+            break
+        elif key < arr[mid_index]:
+            right = mid_index - 1
+        elif key > arr[mid_index]:
+            left = mid_index + 1
+
+    #logit to trace left most key
+    j = mid_index - 1
+    while j >= 0:
+        if arr[j] < key:
+            return j + 1
+        j = j - 1
+        
+    return None
+        
+
+#test code
+if __name__=="__main__":
+    a = list(map(int, input("Enter space seperated values: ").split()))
+    key = int(input("Enter the search key: "))
+    ans = binarySearch(a, key)
+    if ans != None:
+        print(f"{key} is found at index: {ans}")
+    else:
+        print(f"{key} is not found")
+
+```
