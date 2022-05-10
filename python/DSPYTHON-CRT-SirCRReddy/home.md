@@ -121,3 +121,32 @@ if __name__=="__main__":
 
 
 ### 2. Binary Search Algorithm
+
+#### Traditional Method
+
+```python
+def binarySearch(arr, key):
+    left, right = 0, len(arr) - 1
+    mid_index = 0
+    while left <= right:
+        mid_index = (left + right) // 2
+        if arr[mid_index] == key:
+            return mid_index
+        elif key < arr[mid_index]:
+            right = mid_index - 1
+        elif key > arr[mid_index]:
+            left = mid_index + 1
+    return None
+        
+
+#test code
+if __name__=="__main__":
+    a = list(map(int, input("Enter space seperated values: ").split()))
+    key = int(input("Enter the search key: "))
+    ans = binarySearch(a, key)
+    if ans != None:
+        print(f"{key} is found at index: {ans}")
+    else:
+        print(f"{key} is not found")
+
+```
