@@ -275,3 +275,78 @@ if __name__=="__main__":
         print(f"{key} is not found")
 
 ```
+
+#### Finding Square Root using Binary Search Algorithm
+
+```python
+def BinarySearchSquareRoot(n):
+    left = 1
+    right = n
+    mid = 0
+    while left < right:
+        #calculate mid
+        mid = (left + right) // 2
+        if mid * mid == n:
+            return mid
+        elif mid * mid > n:
+            right = mid - 1
+        elif mid * mid < n:
+            left = mid + 1
+    return left
+    
+if __name__ == '__main__':
+    a = int(input("Enter a number: "))
+    ans = BinarySearchSquareRoot(a)
+    print(f"Square root of {a} is {ans}")
+```
+
+### Practice Problems:
+
+Assignment on Binary Search: [Assignment on Binary Search](https://jovian.ai/aakashns/python-binary-search-assignment)
+Binary Search Problems on LeetCode: [Binary Search Problems on LeetCode](https://leetcode.com/problems/binary-search/)
+Binary Search Problems on GeeksForGeeks: [Binary Search Problems on GeeksForGeeks](https://www.geeksforgeeks.org/binary-search/)
+Binary Search Problems on Codeforces: [Binary Search Problems on Codeforces](https://codeforces.com/problemset?tags=binary+search)
+
+[Two Sum](https://techiedelight.com/practice/?problem=TwoSum#)
+```python
+'''
+Given an unsorted integer array, find a pair with the given sum in it.
+
+• Each input can have multiple solutions. The output should match with either one of them.
+
+Input : nums[] = [8, 7, 2, 5, 3, 1], target = 10
+Output: (8, 2) or (7, 3)
+
+• The solution can return pair in any order. If no pair with the given sum exists, the solution should return an empty tuple.
+
+Input : nums[] = [5, 2, 6, 8, 1, 9], target = 12
+Output: ()
+
+'''
+
+class Solution:
+	def findPair(self, nums: List[int], target: int) -> Tuple[int]:
+		# Write your code here...
+		return
+```
+[Sort Binary Array](https://techiedelight.com/practice/?problem=SortBinaryArray)
+
+```python
+'''
+Given a binary array, in-place sort it in linear time and constant space. The output should contain all zeroes, followed by all ones.
+
+Input : [1, 0, 1, 0, 1, 0, 0, 1]
+Output: [0, 0, 0, 0, 1, 1, 1, 1]
+
+Input : [1, 1]
+Output: [1, 1]
+
+'''
+
+class Solution:
+	def sortArray(self, nums: List[int]) -> None:
+		# Write your code here...
+		return
+
+
+```
