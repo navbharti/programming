@@ -422,6 +422,55 @@ if __name__=="__main__":
 
 ```
 
+#### Selection Sort Algorithm Basic
+
+```python
+def SelectionSort(arr):
+    n = len(arr)-1
+    for i in range(n):
+        #assumed min_val and min_index
+        min_val = arr[i]
+        min_index = i
+        #find actual min_val
+        for j in range(i+1, n+1):
+            if min_val > arr[j]:
+                min_val = arr[j]
+                min_index = j
+            
+        #temp = arr[i]
+        #arr[i] = arr[min_index]
+        #arr[min_index] = temp
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+        print(f"Phase-{i+1} : {arr}")
+        
+if __name__ == '__main__':
+    a = list(map(int, input("Enter space seperated Integers: ").split()))
+    print("Element Before Sorting: ")
+    print(a)
+    SelectionSort(a)
+    print("Element After Sorting: ")
+    print(a)
+```
+
+`Input and Ouput:`
+
+```console
+Input: 12 9 -56 -34 100 5 2 8 10 9
+
+Enter space seperated Integers: Element Before Sorting: 
+[12, 9, -56, -34, 100, 5, 2, 8, 10, 9]
+Phase-1 : [-56, 9, 12, -34, 100, 5, 2, 8, 10, 9]
+Phase-2 : [-56, -34, 12, 9, 100, 5, 2, 8, 10, 9]
+Phase-3 : [-56, -34, 2, 9, 100, 5, 12, 8, 10, 9]
+Phase-4 : [-56, -34, 2, 5, 100, 9, 12, 8, 10, 9]
+Phase-5 : [-56, -34, 2, 5, 8, 9, 12, 100, 10, 9]
+Phase-6 : [-56, -34, 2, 5, 8, 9, 12, 100, 10, 9]
+Phase-7 : [-56, -34, 2, 5, 8, 9, 9, 100, 10, 12]
+Phase-8 : [-56, -34, 2, 5, 8, 9, 9, 10, 100, 12]
+Phase-9 : [-56, -34, 2, 5, 8, 9, 9, 10, 12, 100]
+Element After Sorting: 
+[-56, -34, 2, 5, 8, 9, 9, 10, 12, 100]
+```
 ### Practice Problems:
 
 Assignment on Binary Search: [Assignment on Binary Search](https://jovian.ai/aakashns/python-binary-search-assignment)
