@@ -342,6 +342,43 @@ Phase: 5 : [2, 4, 5, 8, 10, 90]
 Data after sorting: 
 [2, 4, 5, 8, 10, 90]
 ```
+
+#### Bubble Sort Optimized Algoirthm
+#### How to check elements are already sorted?
+
+```python
+def bubbleSort(arr):
+    n = len(arr)
+    flag = False
+    for i in range(n-1):
+        for j in range(n-i-1):
+            if arr[j] > arr[j+1]:
+                #swap the elements
+                temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
+                flag = True
+                #arr[j], arr[j+1] = arr[j+1], arr[j]
+        if flag == False:
+            #break
+            return
+        print(f"Phase: {i+1} : {arr}")
+
+#test code
+if __name__=="__main__":
+    #a = list(map(int, input("Enter space seperated values: ").split()))
+    a = [5, 8, 90, 10, 2, 4]
+    print("Data before sorting: ")
+    print(a)
+    bubbleSort(a)
+    print("Data after sorting: ")
+    print(a)
+
+
+```
+
+
+
 ### Practice Problems:
 
 Assignment on Binary Search: [Assignment on Binary Search](https://jovian.ai/aakashns/python-binary-search-assignment)
