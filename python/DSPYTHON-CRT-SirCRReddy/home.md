@@ -300,6 +300,48 @@ if __name__ == '__main__':
     print(f"Square root of {a} is {ans}")
 ```
 
+## Sorting Algorithms:
+
+### Bubble Sort Algorithm Basics
+
+```python
+def bubbleSort(arr):
+    n = len(arr)
+    for i in range(n-1):
+        for j in range(n-i-1):
+            if arr[j] > arr[j+1]:
+                #swap the elements
+                temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
+                #arr[j], arr[j+1] = arr[j+1], arr[j]
+        print(f"Phase: {i+1} : {arr}")
+
+#test code
+if __name__=="__main__":
+    #a = list(map(int, input("Enter space seperated values: ").split()))
+    a = [5, 8, 90, 10, 2, 4]
+    print("Data before sorting: ")
+    print(a)
+    bubbleSort(a)
+    print("Data after sorting: ")
+    print(a)
+
+```
+
+`Input and Output`
+
+```console
+Data before sorting: 
+[5, 8, 90, 10, 2, 4]
+Phase: 1 : [5, 8, 10, 2, 4, 90]
+Phase: 2 : [5, 8, 2, 4, 10, 90]
+Phase: 3 : [5, 2, 4, 8, 10, 90]
+Phase: 4 : [2, 4, 5, 8, 10, 90]
+Phase: 5 : [2, 4, 5, 8, 10, 90]
+Data after sorting: 
+[2, 4, 5, 8, 10, 90]
+```
 ### Practice Problems:
 
 Assignment on Binary Search: [Assignment on Binary Search](https://jovian.ai/aakashns/python-binary-search-assignment)
