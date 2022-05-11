@@ -377,7 +377,50 @@ if __name__=="__main__":
 
 ```
 
+#### Bubble Sort Optimized Algorithm
 
+```python
+def bubbleSortOptimized(arr):
+    left = 0
+    right = len(arr)-1
+    phase=0
+    while left <= right:
+        phase = phase + 1
+        for i in range(right):
+            if arr[i] > arr[i+1]:
+                #swap the elements
+                temp = arr[i]
+                arr[i] = arr[i+1]
+                arr[i+1] = temp
+                #flag = True
+                #arr[i], arr[i+1] = arr[i+1], arr[i]
+        right = right - 1
+        for j in range(right-1, left, -1):
+            if arr[j] > arr[j+1]:
+                #swap the elements
+                temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
+                #flag = True
+                #arr[j], arr[j+1] = arr[j+1], arr[j]
+        left = left + 1
+        #if flag == False:
+        #    #break
+        #    return
+        print(f"Phase: {phase} : {arr}")
+        phase = phase + 1
+
+#test code
+if __name__=="__main__":
+    #a = list(map(int, input("Enter space seperated values: ").split()))
+    a = [5, 8, 90, 10, 2, 4]
+    print("Data before sorting: ")
+    print(a)
+    bubbleSortOptimized(a)
+    print("Data after sorting: ")
+    print(a)
+
+```
 
 ### Practice Problems:
 
