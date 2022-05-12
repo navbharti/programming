@@ -571,6 +571,45 @@ Total shifts of elements 20
 Integers after sorting:  [-56, -34, 2, 5, 8, 9, 9, 10, 12, 100]
 ```
 
+#### Quick Sort Algorithm
+
+```python
+def partition(arr, left, right):
+   pivot = arr[right]
+   i = left
+   j = right - 1
+
+   while True:
+      while arr[i] < pivot:
+         i += 1            
+
+      while j > 0 and arr[j] > pivot:
+         j -= 1
+
+      if i >= j:
+         break
+      else:                
+         #swap ith,rightPointer
+         arr[i],arr[j] = arr[j], arr[i]
+
+
+   arr[i], arr[right] = arr[right], arr[i]
+   print(arr)
+   return i
+	
+def quickSort(arr, left, right):
+    if left < right:
+        p = partition(arr, left, right)
+        quickSort(arr, left, p-1)
+        quickSort(arr, p+1, right)
+        
+if __name__ == '__main__':
+    a = [10, 7, 8, 9, 1, 5]
+    quickSort(a, 0, 5)
+    print(a)
+        
+```
+
 ### Practice Problems:
 
 Assignment on Binary Search: [Assignment on Binary Search](https://jovian.ai/aakashns/python-binary-search-assignment)
