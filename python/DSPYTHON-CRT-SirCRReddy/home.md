@@ -486,7 +486,7 @@ def selectionSrotOptimized(arr):
         max_val = arr[i]
         max_index = j
         
-        for idx in range(i+1, j):
+        for idx in range(i+1, j+1):
             if arr[idx] < min_val:
                 min_val = arr[idx]
                 min_index = idx
@@ -503,13 +503,15 @@ def selectionSrotOptimized(arr):
             
         i += 1
         j -= 1
+        print(f"min_val: {min_val} and max_val: {max_val}")
         print(f"Phase-{phase_count} : {arr}")
         
         
 if __name__ == '__main__':
-    a = [5, 8, 90, 10, 2, 4]
+    a = [5, 3, 4, 1]
     selectionSrotOptimized(a)
     print(a)
+
 
 ```
 `Input and Output:`
