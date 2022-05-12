@@ -471,6 +471,57 @@ Phase-9 : [-56, -34, 2, 5, 8, 9, 9, 10, 12, 100]
 Element After Sorting: 
 [-56, -34, 2, 5, 8, 9, 9, 10, 12, 100]
 ```
+
+#### Selection Sort Optimized 
+```python
+def selectionSrotOptimized(arr):
+    i = 0
+    j = len(arr) - 1
+    phase_count = 0
+    while i < j:
+        phase_count += 1
+        min_val = arr[i]
+        min_index = i
+        
+        max_val = arr[i]
+        max_index = j
+        
+        for idx in range(i+1, j):
+            if arr[idx] < min_val:
+                min_val = arr[idx]
+                min_index = idx
+                
+            elif arr[idx] > max_val:
+                max_val = arr[idx]
+                max_index = idx
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+        
+        if arr[min_index] == max_val:
+            arr[min_index], arr[j] = arr[j], arr[min_index]
+        else:
+            arr[max_index], arr[j] = arr[j], arr[max_index]
+            
+        i += 1
+        j -= 1
+        print(f"Phase-{phase_count} : {arr}")
+        
+        
+if __name__ == '__main__':
+    a = [5, 8, 90, 10, 2, 4]
+    selectionSrotOptimized(a)
+    print(a)
+
+```
+`Input and Output:`
+```console
+Phase-1 : [2, 8, 4, 10, 5, 90]
+Phase-2 : [2, 4, 8, 5, 10, 90]
+Phase-3 : [2, 4, 5, 8, 10, 90]
+[2, 4, 5, 8, 10, 90]
+```
+
+
+
 ### Practice Problems:
 
 Assignment on Binary Search: [Assignment on Binary Search](https://jovian.ai/aakashns/python-binary-search-assignment)
