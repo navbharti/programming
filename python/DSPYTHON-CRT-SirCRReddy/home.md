@@ -519,8 +519,57 @@ Phase-2 : [2, 4, 8, 5, 10, 90]
 Phase-3 : [2, 4, 5, 8, 10, 90]
 [2, 4, 5, 8, 10, 90]
 ```
+#### Insertion Sort Algorithm - Basic
+
+```python
+def insertionSort(arr):
+    count = 0
+    for i in range(1, len(arr)):
+
+        key = arr[i]
+
+    
+        j = i - 1
+        #shifting right side 
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+            count = count + 1
+            
+        #swapping
+        arr[j + 1] = key
+        print(f"Phase-{i} : {arr} selected key: {key}")
+    print(f"Total shifts of elements {count}")
 
 
+# Test Code
+if __name__ == "__main__":
+
+    #a = list(map(int, input("Enter Integers with space seperated: ").split()))
+    #a = [5, 8, 90, 10, 2, 4]
+    a = [12, 9, -56, -34, 100, 5, 2, 8, 10, 9]
+    print("Integers before sorting: ", a)
+    insertionSort(a) 
+    print("Integers after sorting: ", a)
+
+
+```
+`Input and Output:`
+
+```console
+Integers before sorting:  [12, 9, -56, -34, 100, 5, 2, 8, 10, 9]
+Phase-1 : [9, 12, -56, -34, 100, 5, 2, 8, 10, 9] selected key: 9
+Phase-2 : [-56, 9, 12, -34, 100, 5, 2, 8, 10, 9] selected key: -56
+Phase-3 : [-56, -34, 9, 12, 100, 5, 2, 8, 10, 9] selected key: -34
+Phase-4 : [-56, -34, 9, 12, 100, 5, 2, 8, 10, 9] selected key: 100
+Phase-5 : [-56, -34, 5, 9, 12, 100, 2, 8, 10, 9] selected key: 5
+Phase-6 : [-56, -34, 2, 5, 9, 12, 100, 8, 10, 9] selected key: 2
+Phase-7 : [-56, -34, 2, 5, 8, 9, 12, 100, 10, 9] selected key: 8
+Phase-8 : [-56, -34, 2, 5, 8, 9, 10, 12, 100, 9] selected key: 10
+Phase-9 : [-56, -34, 2, 5, 8, 9, 9, 10, 12, 100] selected key: 9
+Total shifts of elements 20
+Integers after sorting:  [-56, -34, 2, 5, 8, 9, 9, 10, 12, 100]
+```
 
 ### Practice Problems:
 
