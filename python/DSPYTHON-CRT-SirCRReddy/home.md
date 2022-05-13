@@ -754,3 +754,96 @@ if __name__=="__main__":
     print("stack after popping an element: " + str(stack))
 
 ```
+
+### Stack Implementation using OOPS Concept
+
+```python
+class Stack:
+    def __init__(self, size):
+        self.__data = [None] * size
+        self.__capacity = size
+        self.__top = None
+        self.__size = 0
+        print("Stack Created!!!")
+
+    def capacity(self):
+        return self.__capacity
+
+    def size(self):
+        return self.__size
+        
+    def isUnderflow(self):
+        if self.__top is None:
+            return True
+        else:
+            return False
+
+    def isOverflow(self):
+        if self.__capacity -1  == self.__top:
+            return True
+        else:
+            return False
+
+    def push(self, data):
+        if self.isOverflow() == True:
+            print("Stack is Overflow!!!")
+            print(f"{data} is not pushed!!!")
+            return
+        elif self.__top is None:
+            self.__top = 0
+            self.__data[self.__top] = data
+            self.__size += 1
+            print(f"{data} is pushed!!!")
+        else:
+            self.__top += 1
+            self.__data[self.__top] = data
+            self.__size += 1
+            print(f"{data} is pushed!!!")
+    def pop(self):
+        if self.isUnderflow() == True:
+            print("Stack is Underflow!!!")
+            print("No Element to delete!!!")
+        elif self.__top == 0:
+            temp = self.__data[self.__top]
+            self.__top = None
+            self.__size -= 1
+            print(f"{temp} is deleted!!!")
+        else:
+            temp = self.__data[self.__top]
+            self.__top -= 1
+            self.__size -= 1
+            print(f"{temp} is deleted!!!")
+            
+        
+    def peek(self):
+        if self.isUnderflow() == True:
+            print("Stack is Underflow!!!")
+            print("No Element to peek!!!")
+        else:
+            print(f"Top element: {self.__data[self.__top]}")
+            
+            
+        
+
+
+#test code here
+
+s1 = Stack(5)
+print(f"Capacity of s1: {s1.capacity()}")
+print(f"s1.isUnderflow(): {s1.isUnderflow()}")
+s1.push(12)
+s1.push(100)
+s1.push(2)
+s1.push(122)
+s1.push(120)
+s1.peek()
+s1.push(10)
+print(f"s1.size(): {s1.size()}")
+
+s1.pop()
+
+print(f"Capacity of s1: {s1.capacity()}")
+print(f"s1.isUnderflow(): {s1.isUnderflow()}")
+print(f"s1.size(): {s1.size()}")
+
+```
