@@ -711,5 +711,45 @@ class Solution:
 
 
 ```
+# Linear Data Structure
+## Stack Data Structure
 
+### Stack Implementation Basic
+```python
+# Stack implementation in python
+# Creating a stack
+def create_stack():
+    stack = []
+    return stack
+
+# Creating an empty stack
+def check_empty(stack):
+    if len(stack)==0:
+        return True
+    else:
+        return False
+
+# Adding items into the stack
+def push(stack, item):
+    stack.append(item)
+    print("pushed item: " + item)
+
+# Removing an element from the stack
+def pop(stack):
+    if (check_empty(stack) == True):
+        return "stack is empty"
+    temp = stack.pop()
+    return temp
+
+#Driver Code
+if __name__=="__main__":
+    stack = create_stack()
+    push(stack, str(1))
+    push(stack, str(2))
+    push(stack, str(3))
+    push(stack, str(4))
+    print("popped item: " + pop(stack))
+    print("stack after popping an element: " + str(stack))
+
+```
 
