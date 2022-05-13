@@ -711,10 +711,12 @@ class Solution:
 
 
 ```
+
 # Linear Data Structure
 ## Stack Data Structure
 
 ### Stack Implementation Basic
+
 ```python
 # Stack implementation in python
 # Creating a stack
@@ -752,4 +754,3 @@ if __name__=="__main__":
     print("stack after popping an element: " + str(stack))
 
 ```
-
