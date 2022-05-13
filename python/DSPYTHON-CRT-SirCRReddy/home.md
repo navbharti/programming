@@ -862,3 +862,95 @@ s1.push(111)
 s1.display()
 
 ```
+
+#### Reverse the string using Stack Data Structure
+
+```python
+class Stack:
+    
+    def __init__(self, capacity):
+        self.__capacity = capacity
+        self.__data = [None] * capacity
+        self.__top = None
+        self.__size = 0
+        #print(f"Stack is created with capacity: {self.__capacity}!!!")
+        
+    def push(self, data):
+        #check for stack overflow case
+        if self.isOverflow() == True:
+            #print("Stack Overflow!!!")
+            #print(f"{data} is not pushed!!!")
+            return
+        elif self.isUnderflow() == True:
+            self.__top = 0
+            self.__data[self.__top] = data
+            #print(f"{data} is pushed!!!")
+        else:
+            self.__top += 1
+            self.__data[self.__top] = data
+            #print(f"{data} is pushed!!!")
+
+    def pop(self):
+        if self.isUnderflow() == True:
+            #print("Stack Underflow!!!")
+            #print("No Data popped!!!")
+            return None
+        elif self.size() == 1:
+            temp = self.__data[self.__top]
+            self.__top = None
+            #print(f"{temp} is popped!!!")
+            return temp
+        else:
+            temp = self.__data[self.__top]
+            self.__top -= 1
+            #print(f"{temp} is popped!!!")
+            return temp
+
+    def isUnderflow(self):
+        if self.__top is None:
+            return True
+        else:
+            return False
+            
+
+    def isOverflow(self):
+        if self.__capacity -1 == self.__top:
+            return True
+        else:
+            return False
+        
+    def display(self):
+        #print(f"Stack: {self.__data[0:self.__top+1]}")
+        #check for underflow case
+        if self.isUnderflow() == True:
+            print( "")
+        s = ""
+        for ch in self.__data:
+            s += ch
+        print(s)
+    
+    def size(self):
+        return self.__size
+
+    def peek(self):
+        return self.__data[self.__top]
+
+    def capacity(self):
+        return self.__capacity
+    
+#test code
+#create a new stack object
+string = input("Enter the string: ")
+n = len(string)
+s1 = Stack(n)
+for ch in string:
+    s1.push(ch)
+
+s1.display()
+s = ""
+for i in range(n):
+    s += str(s1.pop())
+
+print(s)
+
+```
