@@ -754,3 +754,111 @@ if __name__=="__main__":
     print("stack after popping an element: " + str(stack))
 
 ```
+# Linear Data Structure
+## Stack Data Structure
+
+### Stack Implementation Basic
+```python
+class Stack:
+    #constructor 
+    def __init__(self, capacity):
+        self.__capacity = capacity
+        self.__data = [None] * capacity
+        self.__top = None
+        self.__size = 0
+        print(f"Stack is created with capacity: {self.__capacity}!!!")
+
+    #push operation  
+    def push(self, data):
+        #check for stack overflow case
+        if self.isOverflow() == True:
+            print("Stack Overflow!!!")
+            print(f"{data} is not pushed!!!")
+            return
+        #check for underflow case
+        elif self.isUnderflow() == True:
+            self.__top = 0
+            self.__data[self.__top] = data
+            print(f"{data} is pushed!!!")
+        #this is general case 
+        else:
+            self.__top += 1
+            self.__data[self.__top] = data
+            print(f"{data} is pushed!!!")
+
+    #pop operation
+    def pop(self):
+        #check for underflow case
+        if self.isUnderflow() == True:
+            print("Stack Underflow!!!")
+            print("No Data popped!!!")
+            return None
+        #check when only one element
+        elif self.size() == 1:
+            temp = self.__data[self.__top]
+            self.__top = None
+            print(f"{temp} is popped!!!")
+            return temp
+        #this is the general case
+        else:
+            temp = self.__data[self.__top]
+            self.__top -= 1
+            print(f"{temp} is popped!!!")
+            return temp
+
+    #method to check underflow cased
+    def isUnderflow(self):
+        if self.__top is None:
+            return True
+        else:
+            return False
+            
+    #method to check overflow case
+    def isOverflow(self):
+        if self.__capacity -1 == self.__top:
+            return True
+        else:
+            return False
+        
+    #method to display complete stack
+    def display(self):
+        print(f"Stack: {self.__data[0:self.__top+1]}")
+
+    #method to return total number of elements in the stack
+    def size(self):
+        return self.__size
+
+    #method to see the top element
+    def peek(self):
+        #check for underflow case
+        if self.isUnderflow() == True:
+            print("Stack Underflow!!!")
+            print("No element to see")
+            return None
+        else:
+            return self.__data[self.__top]
+
+    #method to return total capacity of the stack
+    def capacity(self):
+        return self.__capacity
+    
+
+#test code
+#create a new stack object
+s1 = Stack(5)
+print("How many elements?",s1.size())
+print(f"stack s1 has capacity: {s1.capacity()}")
+print(f"isUnderflow(): {s1.isUnderflow()}")
+print(f"isOverflow(): {s1.isOverflow()}")
+s1.push(12)
+s1.display()
+s1.push(100)
+s1.push(105)
+s1.push(120)
+s1.push(130)
+s1.display()
+s1.pop()
+s1.push(111)
+s1.display()
+
+```
