@@ -983,6 +983,7 @@ class Queue:
         else:
             self.__rear += 1
             self.__data[self.__rear] = new_data
+            self.__size += 1
         print(f"{new_data} is added in the Queue rear")
     def dequeue(self):
         #1. check for empty case
@@ -1019,6 +1020,33 @@ class Queue:
     def size(self):
         return self.__size
 
+    def front(self):
+        #1. check for empty case
+        if self.isEmpty() == True:
+            print("Queue is Empty!!!")
+            return None
+        else:
+            return self.__data[self.__front]
+
+    def rear(self):
+        #1. check for empty case
+        if self.isEmpty() == True:
+            print("Queue is Empty!!!")
+            return
+        else:
+            return self.__data[self.__rear]
+
+    def capacity(self):
+        return self.__capacity
+
+    def display(self):
+        #1. check for empty case
+        if self.isEmpty() == True:
+            print("Queue is Empty!!!")
+            return
+        else:
+            print(f"Queue: {self.__data[self.__front : self.__rear+1]}")
+    
 #test code
 if __name__=="__main__":
     #create queue object with 5 capacity
@@ -1031,7 +1059,12 @@ if __name__=="__main__":
     queue.enqueue(120)
     queue.enqueue(10)
     ans = queue.dequeue()
-    
+    print(f"Front: {queue.front()}")
+    print(f"Rear: {queue.rear()}")
+    print(f"Capacity: {queue.capacity()}")
+    queue.display()
+    queue.dequeue()
+    queue.display()
 
 
 ```
