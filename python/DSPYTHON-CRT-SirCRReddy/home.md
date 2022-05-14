@@ -954,3 +954,84 @@ for i in range(n):
 print(s)
 
 ```
+
+#### Queue Data Structure
+
+### Simple Queue 
+```python
+class Queue:
+    def __init__(self, capacity):
+        self.__capacity = capacity
+        self.__data = [None] * self.__capacity
+        self.__front = None
+        self.__rear = None
+        self.__size = 0
+        print(f"New Queue is created with capacity: {self.__capacity}")
+
+    def enqueue(self, new_data):
+        #1. check for full case
+        if self.isFull() == True:
+            print("Queue is already full!!")
+            return
+        #2. check for empty case
+        elif self.isEmpty() == True:
+            self.__front = 0
+            self.__rear = 0
+            self.__data[self.__rear] = new_data
+            self.__size += 1
+        #3. general case
+        else:
+            self.__rear += 1
+            self.__data[self.__rear] = new_data
+        print(f"{new_data} is added in the Queue rear")
+    def dequeue(self):
+        #1. check for empty case
+        if self.isEmpty() == True:
+            print("Queue is already!!!")
+            return
+        #2. check for only one element
+        elif self.size() == 1:
+            temp = self.__data[self.__front]
+            self.__front = None
+            self.__rear = None
+            self.__size -= 1
+            print(f"{temp} is deleted from front")
+
+        #3. general case
+        else:
+            temp = self.__data[self.__front]
+            self.__front += 1
+            self.__size -= 1
+            print(f"{temp} is deleted from front")
+            
+    def isFull(self):
+        if self.__rear == self.__capacity - 1:
+            return True
+        else:
+            return False
+
+    def isEmpty(self):
+        if self.__front == None and self.__rear == None:
+            return True
+        else:
+            return False
+
+    def size(self):
+        return self.__size
+
+#test code
+if __name__=="__main__":
+    #create queue object with 5 capacity
+    queue = Queue(5)
+    print(f"is queue empty: {queue.isEmpty()}")
+    queue.enqueue(12)
+    queue.enqueue(100)
+    queue.enqueue(12)
+    queue.enqueue(130)
+    queue.enqueue(120)
+    queue.enqueue(10)
+    ans = queue.dequeue()
+    
+
+
+```
