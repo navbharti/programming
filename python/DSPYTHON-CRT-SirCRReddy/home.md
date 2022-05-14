@@ -1068,3 +1068,113 @@ if __name__=="__main__":
 
 
 ```
+
+#### Circular Queue Implementation
+```python
+class CircularQueue:
+    def __init__(self, capacity):
+        self.__capacity = capacity
+        self.__data = [None] * self.__capacity
+        self.__size = 0
+        self.__front = None
+        self.__rear = None
+
+    def enqueue(self, data):
+        if self.isEmpty():
+            self.__front = self.__rear = 0
+            self.__data[self.__rear] = data
+            self.__size += 1
+            print(f"{data} is Added to the Rear!!!")
+        elif self.isFull() or self.__rear + 1 % self.capacity() == self.__front:
+            print("Circular Queue is Full!!!")
+            print(f"{data} is not Added!!!")
+            return
+        else:
+            self.__rear = (self.__rear + 1) % self.capacity()
+            self.__data[self.__rear] = data
+            self.__size += 1
+            print(f"{data} is Added to the Rear!!!")
+
+    def dequeue(self):
+        if self.isEmpty():
+            print("Circular Queue is Empty!!!")
+            print("No Data to Delete!!!")
+            return
+        elif self.size() == 1 and self.__front == self.__rear:
+            temp = self.__data[self.__rear]
+            self.__rear = self.__front = None
+            self.__size -= 1
+            print(f"{temp} is deleted from front!!!")
+        else:
+            temp = self.__data[self.__rear]
+            self.__front += 1
+            self.__size -= 1
+            print(f"{temp} is deleted from front!!!")
+
+    def isFull(self):
+        if self.size() == self.capacity():
+            return True
+        else:
+            return False
+
+    def isEmpty(self):
+        if self.__front is None and self.__rear is None:
+            return True
+        else:
+            return False
+
+    def size(self):
+        return self.__size
+
+    def capacity(self):
+        return self.__capacity
+
+    def show(self):
+        if self.isEmpty():
+            print("Circulra Queue is Empty!!!")
+            print("No Data to Show!!!")
+        elif self.__rear >= self.__front:
+            for i in range(self.__front, self.__rear + 1):
+                print(self.__data[i], end=" ")
+            print()
+        else:
+            for i in range(self.__front, self.capacity()):
+                print(self.__data[i], end=" ")
+            for i in range(0, self.__rear + 1):
+                print(self.__data[i], end=" ")
+            print()
+
+    def front(self):
+        if self.isEmpty():
+            print("Circular Queue is Empty!!!")
+            print("No Data to Show!!!")
+            return
+        else:
+            return self.__data[self.__front]
+
+    def rear(self):
+        if self.isEmpty():
+            print("Circular Queue is Empty!!!")
+            print("No Data to Show!!!")
+            return
+        else:
+            return self.__data[self.__rear]
+
+#test code
+if __name__ == '__main__':
+    circularQueue = CircularQueue(5)
+    print(f"Capacity: {circularQueue.capacity()}")
+    print(f"Size : {circularQueue.size()}")
+    print(f"is Empty: {circularQueue.isEmpty()}")
+    print(f"is Full: {circularQueue.isFull()}")
+    circularQueue.enqueue(12)
+    circularQueue.enqueue(13)
+    circularQueue.enqueue(14)
+    circularQueue.enqueue(15)
+    circularQueue.enqueue(12)
+    circularQueue.enqueue(12)
+    circularQueue.dequeue()
+    circularQueue.enqueue(120)
+    circularQueue.show()
+
+```
