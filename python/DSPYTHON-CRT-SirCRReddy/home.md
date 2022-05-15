@@ -1528,3 +1528,131 @@ if __name__=="__main__":
 
 
 ```
+#### Delete the Last Node
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+#class for Singly Linked List
+class SinglyLinkedList:
+    def __init__(self, node=None):
+        self.__head = node
+        print("new singly linked list is created!!!")
+
+    #method to insert a node at beginning
+    def insertAtBegin(self, data):
+        #case-1 list is empty
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is inserted as first node!!!")
+            return
+        #case-2 list is not empty
+        else:
+            #create a new node
+            newNode = Node(data)
+            #then update link
+            newNode.next = self.__head
+            self.__head = newNode
+            print(f"{data} is inserted at begin!!!")
+
+    def insertAtEnd(self, data):
+        #case-1 list is empty
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is inserted as first node!!!")
+            return
+        #case-2 else case
+        else:
+            #create temp node to traverse to last node
+            temp = self.__head
+            #iterate till last node
+            while temp.next is not None:
+                temp = temp.next
+            newNode = Node(data)
+            temp.next = newNode
+            print(f"{data} is inserted at the end!!!")
+
+    #method to insert a new node at given position
+    def insertAtPosition(self, data, pos):
+        #case-1 empty case
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is insert as first node!!!")
+            return
+        i = 0
+        temp = self.__head
+        while temp.next is not Node:
+            i = i + 1
+            if i == pos -1:
+                break
+            temp = temp.next
+        #update the link
+        newNode = Node(data)
+        newNode.next = temp.next
+        temp.next = newNode
+        print(f"{data} is insert at {pos}")
+
+    #method to delete first node
+    def deleteFromBegin(self):
+        #case-1 empty case
+        if self.__head is None:
+            print("Singly Linked List is Empty!!!")
+            return
+        #case-2 else case
+        else:
+            temp = self.__head
+            self.__head = self.__head.next
+            temp.next = None
+            print(f"\n{temp.data} is being deleted!!!")
+            del temp
+
+    #method to delete the last node
+    def deleteFromEnd(self):
+        #case-1 empty case
+        if self.__head is None:
+            print("Singly Linked List is Empty!!!")
+            return
+        #case-2 non empty case
+        else:
+            temp1 = temp2 = self.__head
+            while temp2.next is not None:
+                temp1 = temp2
+                temp2 = temp2.next
+            temp1.next = None
+            print(f"\n{temp2.data} is being deleted!!!")
+            del temp2
+            
+        
+    #method to display singly linked list
+    def display(self):
+        #case-1 empty case
+        if self.__head is None:
+            print("Singly Linked List is Empty!!!")
+            return
+        else:
+            temp = self.__head
+            while temp is not None:
+                print(temp.data, end=" -> ")
+                temp = temp.next
+
+        
+#test code
+if __name__=="__main__":
+    node1 = Node(15)
+    sll = SinglyLinkedList(node1)
+    sll.insertAtBegin(100)
+    sll.insertAtBegin(50)
+    sll.insertAtBegin(30)
+    sll.insertAtEnd(150)
+    sll.insertAtPosition(25, 4)
+    sll.display()
+    sll.deleteFromBegin()
+    sll.display()
+    sll.deleteFromEnd()
+    sll.display()
+
+
+```
