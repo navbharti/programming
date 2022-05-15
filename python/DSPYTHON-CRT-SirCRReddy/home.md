@@ -1248,3 +1248,75 @@ if __name__=="__main__":
     sll.insertAtBegin(100)
 
 ```
+
+#### Insert At End
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+#class for Singly Linked List
+class SinglyLinkedList:
+    def __init__(self, node=None):
+        self.__head = node
+        print("new singly linked list is created!!!")
+
+    #method to insert a node at beginning
+    def insertAtBegin(self, data):
+        #case-1 list is empty
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is inserted as first node!!!")
+            return
+        #case-2 list is not empty
+        else:
+            #create a new node
+            newNode = Node(data)
+            #then update link
+            newNode.next = self.__head
+            self.__head = newNode
+            print(f"{data} is inserted at begin!!!")
+
+    def insertAtEnd(self, data):
+        #case-1 list is empty
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is inserted as first node!!!")
+            return
+        #case-2 else case
+        else:
+            #create temp node to traverse to last node
+            temp = self.__head
+            #iterate till last node
+            while temp.next is not None:
+                temp = temp.next
+            newNode = Node(data)
+            temp.next = newNode
+            print(f"{data} is inserted at the end!!!")
+
+    #method to display singly linked list
+    def display(self):
+        #case-1 empty case
+        if self.__head is None:
+            print("Singly Linked List is Empty!!!")
+            return
+        else:
+            temp = self.__head
+            while temp is not None:
+                print(temp.data, end=" -> ")
+                temp = temp.next
+#test code
+if __name__=="__main__":
+    node1 = Node(15)
+    sll = SinglyLinkedList(node1)
+    sll.insertAtBegin(100)
+    sll.insertAtBegin(50)
+    sll.insertAtBegin(30)
+    sll.insertAtEnd(150)
+    sll.display()
+
+
+```
