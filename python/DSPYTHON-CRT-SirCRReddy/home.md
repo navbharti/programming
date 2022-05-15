@@ -1181,8 +1181,7 @@ if __name__ == '__main__':
 
 ## Linked List 
 
-
-### Singly Linked List
+### 1. Singly Linked List
 ```python
 class Node:
     def __init__(self, data):
@@ -1208,6 +1207,32 @@ if __name__=="__main__":
     print(node1.next.data)
 
 ```
+### Operations in Singley Linked List
+1. Insert a new Node 
+1.1 Insert a new Node At Beginning
+1.2 Insert a new Node At the End
+1.3 Insert a new Node At Given Position
+1.4 Insert a new Node after a given Data Value
+
+2. Delete an existing Node
+2.1 Delete an existing node from Beginning
+2.2 Delete an existing node from End
+2.3 Delete  an existing node of a given position
+2.4 Delete an existing node of a given Data Value 
+
+3. Update an existing Node data part
+3.1 Update data part of the node at beginning
+3.2 Update data part of the node at the end
+3.3 Update data part of the node of a given position
+3.4 Update data part of the node of a given data part
+
+4. Traverse or Display
+
+5. Traverse or Display in Reverse Order
+
+6. Merging Two Singly Linked Lists
+
+7. Polynomial Implementation using SLL
 
 #### Insert At Beginning
 ```python
@@ -1654,5 +1679,99 @@ if __name__=="__main__":
     sll.deleteFromEnd()
     sll.display()
 
+
+```
+
+#### Delete an existing node from given position
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        print(f"\nNode created with value: {data}")
+
+    def __del__(self):
+        print(f"\n{self.data} is deleted!!!")
+        
+#class for Singly Linked List
+class SinglyLinkedList:
+    #constructur
+    def __init__(self, node=None):
+        self.__head = node
+        print("\nSingly Linked List is Created!!!")
+    #method to insert
+    #1. method to insert at begin
+    def insertAtBegin(self, data):
+        #case-1 list is empty
+        if self.__head is None:
+            newNode = Node(data)
+            self.__head = newNode
+            print(f"\n{data} is inserted as the first node!!!")
+        #case-2 list is not empty
+        else:
+            newNode = Node(data)
+            newNode.next = self.__head
+            self.__head = newNode
+            print(f"\n{data} is inserted at beginning!!!")
+
+    #1. method to insert at end
+    def insertAtEnd(self, data):
+        pass
+
+    #method to traverse the linked list
+    def display(self):
+        #case-1 empty case
+        if self.__head is None:
+            print("Singly Linked List is empty!!!")
+            print("\nNo data to display!!!")
+            return
+        #case-2 non empty case
+        else:
+            temp = self.__head
+            while temp is not None:
+                print(f"{temp.data}", end=" -> ")
+                temp = temp.next
+
+    #method to delete a node at given position
+    def deleteFromPosition(self, position):
+        #case-1 empty case
+        if self.__head is None:
+            print("\nSingly Linked List is Empty!!!")
+            return
+        #case-2 non empty case
+        else:
+            temp2 = self.__head
+            i = 0
+            while temp2.next is not None:
+                i = i + 1
+                if i == position - 1:
+                    break
+                temp2 = temp2.next
+            temp1 = temp2
+            temp2 = temp2.next
+            temp1.next = temp2.next
+            temp2.next = None
+            print(f"\n{temp2.data} is deleted!!!")
+        
+#test code
+if __name__=="__main__":
+    node = Node(12)
+    node1 = Node(15)
+    node2 = Node(30)
+    node.next = node1
+    node1.next = node2
+    #print(f"node: {node.data}\nnode address: {node}\nnext: {node.next}")
+    #print(f"node1: {node1.data}\nnode1 address: {node1}\nnext: {node1.next}")
+    #print(f"node2: {node2.data}\nnode2 address: {node2}\nnext: {node2.next}")
+    
+    sll = SinglyLinkedList(node)
+    sll.display()
+    sll.insertAtBegin(5)
+    sll.display()
+    sll.deleteFromPosition(3)
+    sll.display()
+    node1.next = None
+    del node2
 
 ```
