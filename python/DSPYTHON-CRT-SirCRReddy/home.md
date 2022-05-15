@@ -1178,3 +1178,73 @@ if __name__ == '__main__':
     circularQueue.show()
 
 ```
+
+## Linked List 
+
+
+### Singly Linked List
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+#class for Singly Linked List
+class SinglyLinkedList:
+    def __init__(self, node=None):
+        self.__head = node
+        print("new singly linked list is created!!!")
+
+    
+
+#test code
+if __name__=="__main__":
+    node1 = Node(15)
+    node2 = Node(30)
+    node1.next = node2
+    print(node1.data)
+    print(node2.data)
+    print(node1.next.data)
+
+```
+
+#### Insert At Beginning
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+#class for Singly Linked List
+class SinglyLinkedList:
+    def __init__(self, node=None):
+        self.__head = node
+        print("new singly linked list is created!!!")
+
+    #method to insert a node at beginning
+    def insertAtBegin(self, data):
+        #case-1 list is empty
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is inserted as first node!!!")
+            return
+        #case-2 list is not empty
+        else:
+            #create a new node
+            newNode = Node(data)
+            #then update link
+            newNode.next = self.__head
+            self.__head = newNode
+            print(f"{data} is inserted at begin!!!")
+
+        
+
+#test code
+if __name__=="__main__":
+    node1 = Node(15)
+    sll = SinglyLinkedList(node1)
+    sll.insertAtBegin(100)
+
+```
