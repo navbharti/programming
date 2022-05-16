@@ -2515,3 +2515,34 @@ if __name__ == '__main__':
 
 
 ```
+
+
+## Non-Linear Data Structure
+### Binary Tree Data Structure
+#### Binary Tree Introduction
+```python
+#class for Binary Tree Node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.rightChild = None
+        self.leftChild = None
+        print(f"{data} node created")
+
+#class for Binary Tree
+class BinaryTree:
+    def __init__(self, root=None):
+        self.__root = root
+        print("Binary Tree is created!!!")
+
+
+#test code
+if __name__ == '__main__':
+    root = Node(10)
+    node1 = Node(15)
+    node2 = Node(9)
+    root.rightChild = node2
+    root.leftChild = node1
+    node3 = Node(30)
+    node1.leftChild = node3
+```
