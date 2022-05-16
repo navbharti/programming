@@ -1801,3 +1801,55 @@ if __name__ == '__main__':
     node = Node(10) #creates a node with value 10
     dll = DoublyLinkedList(node)
 ```
+
+#### 1. Insert at Begin
+```python
+#class for creating a node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+        print(f"node created with value {data}")
+
+#class for Double Linked List
+class DoublyLinkedList:
+    def __init__(self, node=None):
+        self.__head = node
+        print("Doubly Linked List is Created!!!")
+
+    #method to insert a new node at beginning
+    def insertAtBegin(self, data):
+        #case-1 empty case
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is inserted as first node")
+        #case-2 else case
+        else:
+            newNode = Node(data)
+            newNode.next = self.__head
+            self.__head.prev = newNode
+            self.__head = newNode
+            print(f"{data} is inserted as first node")
+    #method to display or traverse
+    def display(self):
+        #case-1 empty case
+        if self.__head is None:
+            print("Doubly Linked List is empty!!!")
+        #case-2 non empty case
+        else:
+            temp = self.__head
+            while temp is not None:
+                print(f"{temp.data}", end= " -> ")
+                temp = temp.next
+
+#test code
+if __name__ == '__main__':
+    node = Node(10) #creates a node with value 10
+    dll = DoublyLinkedList(node)
+    dll.insertAtBegin(5)
+    dll.insertAtBegin(3)
+    dll.display()
+
+
+```
