@@ -1776,3 +1776,34 @@ if __name__=="__main__":
 
 ```
 
+## Doubly Linked List - Linear Data Structure
+### Introductory code
+
+```python
+#class for node doubly linked list
+class Node:
+    #constructor
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+        print(f"new Node is created with value: {data}")
+
+#test code
+if __name__ == '__main__':
+    node1 = Node(10)
+    node2 = Node(20)
+    node3 = Node(30)
+    print(node1.prev, node1, node1.next)
+    print(node2.prev, node2, node2.next)
+    print(node3.prev, node3, node3.next)
+    #establish the connection among these nodes
+    node1.next = node2
+    node2.prev = node1
+    node2.next = node3
+    node3.prev = node2
+    print(node1.prev, node1, node1.next)
+    print(node2.prev, node2, node2.next)
+    print(node3.prev, node3, node3.next)
+    print(node1.data, node1.next.data, node1.next.next.data)
+```
