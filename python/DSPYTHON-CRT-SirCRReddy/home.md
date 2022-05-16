@@ -1775,3 +1775,29 @@ if __name__=="__main__":
     del node2
 
 ```
+
+### Doubly Linked List Implementation in Python
+
+```python
+#class for creating a node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+        print(f"node created with value {data}")
+
+#class for Double Linked List
+class DoublyLinkedList:
+    def __init__(self, node=None):
+        self.__head = node
+        print("Doubly Linked List is Created!!!")
+
+    def insertAtBegin(self, data):
+        pass
+
+#test code
+if __name__ == '__main__':
+    node = Node(10) #creates a node with value 10
+    dll = DoublyLinkedList(node)
+```
