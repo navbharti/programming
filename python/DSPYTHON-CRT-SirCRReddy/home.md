@@ -2200,3 +2200,261 @@ if __name__ == '__main__':
     dll.deleteFromPosition(3)
     dll.display()
 ```
+
+#### Doubly Linked List Complete code
+```python
+# class for creating a node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+        print(f"node created with value {data}")
+
+
+# class for Double Linked List
+class DoublyLinkedList:
+    def __init__(self, node=None):
+        self.__head = node
+        print("Doubly Linked List is Created!!!")
+
+    # method to insert a new node at beginning
+    def insertAtBegin(self, data):
+        # case-1 empty case
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is inserted as first node")
+        # case-2 else case
+        else:
+            newNode = Node(data)
+            newNode.next = self.__head
+            self.__head.prev = newNode
+            self.__head = newNode
+            print(f"{data} is inserted as first node")
+
+    # method to insert new node at the end
+    def insertAtEnd(self, data):
+        # case-1 empty case
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is inserted as first")
+        # case-2 non empty case
+        else:
+            newNode = Node(data)
+            temp = self.__head
+            while temp.next is not None:
+                temp = temp.next
+            newNode.prev = temp
+            temp.next = newNode
+            print(f"{data} is insert at the end")
+
+    # insert new node at given position
+    def insertAtPosition(self, data, pos):
+        # case-1 empty case
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is inserted as first node")
+        # case-2 non-empty case
+        else:
+            newNode = Node(data)
+            temp = self.__head
+            i = 0
+            while temp.next is not None:
+                i += 1
+                if i == pos - 1:
+                    break
+                temp = temp.next
+            newNode.next = temp.next
+            newNode.prev = temp
+            temp.next.prev = newNode
+            temp.next = newNode
+            print(f"{data} is inserted at {pos}")
+
+    # method to count total nodes in list
+    def nodeCount(self):
+        #case-1 empty case
+        if self.__head is None:
+            return 0
+        else:
+            cnt = 0
+            temp = self.__head
+            while temp is not None:
+                cnt += 1
+                temp = temp.next
+            return cnt
+
+    # method to delete node from begin
+    def deleteFromBegin(self):
+        #case-1 empty case
+        if self.__head is None:
+            print("Doubly Linked List is empty")
+            return
+        #case-2 non-empty case
+        else:
+            temp = self.__head
+            self.__head = self.__head.next
+            temp.next.prev = None
+            temp.next = None
+            print(f"{temp.data} is being deleted")
+            del temp
+
+    # method to delete node from end
+    def deleteFromEnd(self):
+        #case-1 empty case
+        if self.__head is None:
+            print("\nDoubly Linked List is empty")
+            return
+        #case-2 non-empty case
+        else:
+            temp2 = self.__head
+            while temp2.next is not None:
+                temp2 = temp2.next
+            temp1 = temp2.prev
+            temp1.next = None
+            temp2.prev = None
+            print(f"\n{temp2.data} is being deleted")
+            del temp2
+
+    # method to delete node from given position
+    def deleteFromPosition(self, pos):
+        #case-1 empty case
+        if self.__head is None:
+            print("Doubly Linked List is empty")
+            return
+        #case-2 non-empty case
+        else:
+            i = 0
+            temp2 = self.__head
+            while temp2.next is not None:
+                i = i + 1
+                if i == pos:
+                    break
+                temp2 = temp2.next
+            temp1 = temp2.prev
+            temp1.next = temp2.next
+            temp2.next.prev = temp1
+            temp2.next = temp2.prev = None
+            print(f"{temp2.data} is being deleted from {pos} position")
+            del temp2
+
+    # method to update data value at begin
+    def updateAtBegin(self, newData):
+        #case-1 empty case
+        if self.__head is None:
+            print("Doubly Linked List is empty")
+            print("No node to update!!!")
+            return
+        #case-2 non-empty case
+        else:
+            self.__head.data = newData
+            print(f"First node data is updated with {newData}")
+
+    # method to update data value at end
+    def updateAtEnd(self, newData):
+        #case-1 empty case
+        if self.__head is None:
+            print("Doubly Linked List is empty")
+            print("No node data to update")
+            return
+        #case-2 non-empty case
+        else:
+            #traverse the list to last node
+            temp = self.__head
+            while temp.next is not None:
+                temp = temp.next
+            #update the temp data with newData value
+            temp.data = newData
+            print(f"End node data is updated with {newData} value")
+
+    # method to update data value at given position
+    def updateAtPosition(self, newData, pos):
+        #case-1 empty case
+        if self.__head is None:
+            print("Doubly Linked List is empty")
+            print("No node data to update")
+            return
+        #case-2 non-empty case
+        else:
+            #traverse to node at given position
+            i = 0
+            temp = self.__head
+            while temp.next is not None:
+                i = i + 1
+                if i == pos:
+                    break
+                temp = temp.next
+            #update the data part of temp
+            temp.data = newData
+            print(f"{pos} node data is updated with {newData} value")
+
+    # method to update data value of given data of node
+    def updateAtData(self, newData, oldData):
+        #case-1 empty case
+        if self.__head is None:
+            print("Doubly Linked List is empty")
+            print("No node data to update")
+            return
+        #case-2 non-empty case
+        else:
+            #traverse to node with given keyData
+            temp = self.__head
+            while temp.next is not None:
+                if temp.data == oldData:
+                    break
+                temp = temp.next
+            temp.data = newData
+            print(f"node data is updated with {newData} value")
+
+    # method to display or traverse
+    def display(self):
+        # case-1 empty case
+        if self.__head is None:
+            print("Doubly Linked List is empty!!!")
+        # case-2 non-empty case
+        else:
+            temp = self.__head
+            while temp is not None:
+                print(f"{temp.data}", end=" -> ")
+                temp = temp.next
+            print()
+    # method to display the list in reverse order
+    def displayReverse(self):
+        #case-1 traverse in reverse order
+        if self.__head is None:
+            print("Doubly Linked List is empty")
+            print("No node data to display")
+            return
+        #case-2 non-empty case
+        else:
+            #traverse to the last node
+            temp = self.__head
+            while temp.next is not None:
+                temp = temp.next
+            #traverse backward to head node
+            while temp.prev is not None:
+                print(f"{temp.data}", end=" -> ")
+                temp = temp.prev
+            print()
+
+
+# test code
+if __name__ == '__main__':
+    node = Node(10)  # creates a node with value 10
+    dll = DoublyLinkedList(node)
+    dll.insertAtBegin(5)
+    dll.insertAtBegin(3)
+    dll.insertAtEnd(20)
+    dll.insertAtEnd(30)
+    dll.insertAtPosition(9, 3)
+    dll.display()
+    #dll.deleteFromBegin()
+    dll.display()
+    #dll.deleteFromEnd()
+    dll.display()
+    #dll.deleteFromPosition(3)
+    dll.display()
+    dll.displayReverse()
+    ans = dll.nodeCount()
+    print(f"Total nodes: {ans}")
+
+```
