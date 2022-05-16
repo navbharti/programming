@@ -2546,3 +2546,69 @@ if __name__ == '__main__':
     node3 = Node(30)
     node1.leftChild = node3
 ```
+
+#### Binary Tree Traversal
+```python
+# class for Binary Tree Node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.rightChild = None
+        self.leftChild = None
+        print(f"{data} node created")
+
+
+# class for Binary Tree
+class BinaryTree:
+    def __init__(self, root=None):
+        self.__root = root
+        print("Binary Tree is created!!!")
+
+    # inorder traversal
+    @staticmethod
+    def inorder(node: Node):
+        if node is None:
+            return
+        else:
+            BinaryTree.inorder(node.leftChild)
+            print(f"{node.data}", end=" ")
+            BinaryTree.inorder(node.rightChild)
+
+    # preorder traversal
+    @staticmethod
+    def preorder(node: Node):
+        if node is None:
+            return
+        else:
+            print(f"{node.data}", end=" ")
+            BinaryTree.preorder(node.leftChild)
+            BinaryTree.inorder(node.rightChild)
+
+    # post order traversal
+    @staticmethod
+    def postorder(node: Node):
+        if node is None:
+            return
+        else:
+
+            BinaryTree.postorder(node.leftChild)
+            BinaryTree.postorder(node.rightChild)
+            print(f"{node.data}", end=" ")
+
+
+# test code
+if __name__ == '__main__':
+    root = Node(10)
+    node1 = Node(15)
+    node2 = Node(9)
+    root.rightChild = node2
+    root.leftChild = node1
+    node3 = Node(30)
+    node1.leftChild = node3
+    print("In-Order Traversal: ")
+    BinaryTree.inorder(root)
+    print("Pre-Order Traversal: ")
+    BinaryTree.preorder(root)
+    print("Post-Order Traversal: ")
+    BinaryTree.postorder(root)
+```
