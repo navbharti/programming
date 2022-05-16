@@ -2458,3 +2458,60 @@ if __name__ == '__main__':
     print(f"Total nodes: {ans}")
 
 ```
+
+#### Singly Circular Linked List
+```python
+#class for node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        print(f"new node created with value: {data}")
+
+#class Circular Singly Linked List
+class CircularSinglyLinkedList:
+    def __init__(self):
+        self.__head = None
+        print("A new Circular Singly Linked List is created")
+
+    def insertAtBegin(self, data):
+        #case-1 empty
+        if self.__head is None:
+            newNode = Node(data)
+            newNode.next = newNode
+            self.__head = newNode
+            print(f"{data} is inserted as first node")
+        #case-2 non-empty case
+        else:
+            newNode = Node(data)
+            newNode.next = self.__head
+            self.__head = newNode
+            print(f"{data} is inserted as first node")
+
+    #method to display linked list
+    def display(self):
+        #case-1 empty case
+        if self.__head is None:
+            print("Circular Singly Linked List is empty")
+            print("No Node data is display")
+            return
+        #case-2 non-empty case
+        else:
+            print("entered to else display")
+            temp = self.__head
+            while temp is not self.__head:
+                print(f"{temp.data}", end=" -> ")
+                temp = temp.next
+            print()
+
+
+
+#test code
+if __name__ == '__main__':
+    csll = CircularSinglyLinkedList()
+    csll.insertAtBegin(10)
+    csll.insertAtBegin(20)
+    csll.display()
+
+
+```
