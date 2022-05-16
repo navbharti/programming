@@ -2021,7 +2021,9 @@ if __name__ == '__main__':
 ```
 
 #### Delete from Begin, End, and from given pos
+### Delete From Begin
 
+[](python/DSPYTHON-CRT-SirCRReddy/images/delete_from_begin.png)
 ```python
 # class for creating a node
 class Node:
@@ -2198,4 +2200,35 @@ if __name__ == '__main__':
     dll.deleteFromPosition(3)
     dll.display()
 
+```
+
+# Non-Linear Data Structure
+
+## Tree Introduction
+
+```python
+#class for Binary Tree Node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.rightChild = None
+        self.leftChild = None
+        print(f"{data} node created")
+
+#class for Binary Tree
+class BinaryTree:
+    def __init__(self, root):
+        self.__root = root
+        print("Binary Tree is created!!!")
+
+
+#test code
+if __name__ == '__main__':
+    root = Node(10)
+    node1 = Node(15)
+    node2 = Node(9)
+    root.rightChild = node2
+    root.leftChild = node1
+    node3 = Node(30)
+    node1.leftChild = node3
 ```
