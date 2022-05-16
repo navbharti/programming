@@ -1807,3 +1807,92 @@ if __name__ == '__main__':
     print(node3.prev, node3, node3.next)
     print(node1.data, node1.next.data, node1.next.next.data)
 ```
+
+### Complete Skeleton of Doubly Linked List
+```python
+#class for node doubly linked list
+class Node:
+    #constructor
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+        print(f"new Node is created with value: {data}")
+
+#class for Doubly Linked List
+class DoublyLinkedList:
+    #constructor
+    def __init__(self, node):
+        self.__head = node
+        print("new Doubly Linked List is created!!!")
+
+    #insert operations
+    #1. insert at begin method
+    def insertAtBegin(self, data):
+        pass
+
+    #2. insert at end method
+    def insertAtEnd(self, data):
+        pass
+
+    #3. insert at given position method
+    def insertAtPosition(self, data, pos):
+        pass
+
+    #4. insert after given data value method
+    def insertAfterData(self, data, keyData):
+        pass
+
+    # delete operations
+    #1. delete from begin method
+    def deleteFromBegin(self):
+        pass
+
+    #2. delete from end method
+    def deleteFromEnd(self):
+        pass
+
+    #3. delete from given position method
+    def deleteFromPosition(self, pos):
+        pass
+
+    #4. delete by given keyData
+    def deleteData(self, keyData):
+        pass
+
+    #update operations
+    #1. update at begin method
+    def updateAtBegin(self, newData):
+        pass
+
+    #2. update at end method
+    def updateAtEnd(self, newData):
+        pass
+
+    #3. update at given position
+    def updateAtPosition(self, newData, pos):
+        pass
+
+    #4. update given key data
+    def updateKeyData(self, newData, keyData):
+        pass
+
+    #display method
+    def display(self):
+        pass
+
+    #display reverser order method
+    def displayReverse(self):
+        pass
+
+    #count nodes
+    def countNodes(self):
+        pass
+
+
+#test code
+if __name__ == '__main__':
+    #create new Doubly Linked List object
+    node = Node(10)
+    dll = DoublyLinkedList(node)
+```
