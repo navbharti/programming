@@ -1934,3 +1934,30 @@ if __name__ == '__main__':
             temp.next = newNode
             print(f"{data} is insert at the end")
 ```
+
+#### Insert at given position
+
+```python
+    # insert new node at given position
+    def insertAtPosition(self, data, pos):
+        # case-1 empty case
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is inserted as first node")
+        # case-2 non-empty case
+        else:
+            newNode = Node(data)
+            temp = self.__head
+            i = 0
+            while temp.next is not None:
+                i += 1
+                if i == pos - 1:
+                    break
+                temp = temp.next
+            newNode.next = temp.next
+            newNode.prev = temp
+            temp.next.prev = newNode
+            temp.next = newNode
+            print(f"{data} is inserted at {pos}")
+
+```
