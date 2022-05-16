@@ -2025,8 +2025,6 @@ if __name__ == '__main__':
 #### Delete from Begin, End, and from given pos
 ### Delete From Begin
 
-[](python/DSPYTHON-CRT-SirCRReddy/images/delete_from_begin.png)
-```python
 # class for creating a node
 class Node:
     def __init__(self, data):
@@ -2201,6 +2199,4 @@ if __name__ == '__main__':
     dll.display()
     dll.deleteFromPosition(3)
     dll.display()
-
-```
 ```
