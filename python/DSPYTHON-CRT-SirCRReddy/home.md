@@ -1914,3 +1914,23 @@ if __name__ == '__main__':
             self.__head=newNode
             print(f"{data} is inserted as first node")
 ```
+
+#### Insert at end method
+
+```python
+# method to insert new node at the end
+    def insertAtEnd(self, data):
+        # case-1 empty case
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is inserted as first")
+        # case-2 non empty case
+        else:
+            newNode = Node(data)
+            temp = self.__head
+            while temp.next is not None:
+                temp = temp.next
+            newNode.prev = temp
+            temp.next = newNode
+            print(f"{data} is insert at the end")
+```
