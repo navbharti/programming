@@ -1896,3 +1896,21 @@ if __name__ == '__main__':
     node = Node(10)
     dll = DoublyLinkedList(node)
 ```
+
+#### insert at begin method
+```python
+#insert operations
+    #1. insert at begin method
+    def insertAtBegin(self, data):
+        #case-1 empty case
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is inserted as first node")
+        #case-2 non-empty case
+        else:
+            newNode = Node(data)
+            newNode.next=self.__head
+            self.__head.prev = newNode
+            self.__head=newNode
+            print(f"{data} is inserted as first node")
+```
