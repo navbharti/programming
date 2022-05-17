@@ -2617,3 +2617,80 @@ if __name__ == '__main__':
     print("Post-Order Traversal: ")
     BinaryTree.postorder(root)
 ```
+
+#### Stack Implementation through Singly Linked List
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+# class for Singly Linked List
+#having only insertAtBegin() and deleteFromBegin()
+class Stack:
+    def __init__(self, node=None):
+        self.__head = node
+        print("new Stack is created!!!")
+
+    # method to insert a node at beginning
+    def push(self, data):
+        # case-1 list is empty
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is pushed!!!")
+            return
+        # case-2 list is not empty
+        else:
+            # create a new node
+            newNode = Node(data)
+            # then update link
+            newNode.next = self.__head
+            self.__head = newNode
+            print(f"{data} is pushed!!!")
+
+    # method to delete first node
+    def pop(self):
+        # case-1 empty case
+        if self.__head is None:
+            print("Stack Underflow!!!")
+            return None
+        # case-2 else case
+        else:
+            temp = self.__head
+            self.__head = self.__head.next
+            temp.next = None
+            print(f"\n{temp.data} is popped!!!")
+            data = temp.data
+            del temp
+            return data
+
+    #peek() operation
+    def peek(self):
+        return self.__head.data
+
+    #method to display singly linked list
+    def display(self):
+        #case-1 empty case
+        if self.__head is None:
+            print("Stack Underflow!!!")
+            return
+        else:
+            temp = self.__head
+            while temp is not None:
+                print(temp.data, end=" -> ")
+                temp = temp.next
+
+# test code
+if __name__ == "__main__":
+    #create Stack object
+    node = Node(10)
+    stack = Stack(node)
+    stack.display()
+    stack.push(30)
+    stack.push(100)
+    stack.display()
+    ans = stack.pop()
+    print(f"{ans} is Deleted")
+    stack.display()
+```
