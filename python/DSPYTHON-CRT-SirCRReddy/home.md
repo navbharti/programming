@@ -2924,3 +2924,174 @@ if __name__ == '__main__':
     tree.deleteNode(30)
     BinaryTree.inorder(tree.getRoot())
 ```
+
+#### Binary Search Tree Implementation 
+```python
+# class for Binary Tree Node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.rightChild = None
+        self.leftChild = None
+        print(f"{data} node created")
+
+
+# class for Binary Tree
+class BinarySearchTree:
+    def __init__(self, root=None):
+        self.__root = root
+        print("New Binary Search Tree is created!!!")
+
+    def getRoot(self):
+        return self.__root
+
+    # inorder traversal
+    @staticmethod
+    def inorder(node: Node):
+        if node is None:
+            return
+        else:
+            BinarySearchTree.inorder(node.leftChild)
+            print(f"{node.data}", end=" ")
+            BinarySearchTree.inorder(node.rightChild)
+
+    # preorder traversal
+    @staticmethod
+    def preorder(node: Node):
+        if node is None:
+            return
+        else:
+            print(f"{node.data}", end=" ")
+            BinarySearchTree.preorder(node.leftChild)
+            BinarySearchTree.inorder(node.rightChild)
+
+    # post order traversal
+    @staticmethod
+    def postorder(node: Node):
+        if node is None:
+            return
+        else:
+            BinarySearchTree.postorder(node.leftChild)
+            BinarySearchTree.postorder(node.rightChild)
+            print(f"{node.data}", end=" ")
+
+    # A utility function to search a given key in BST
+    @staticmethod
+    def search(root:Node, data):
+        #Case-1 empty or data is present at root
+        if root is None or root.data == data:
+            return root
+
+        #Case-2 data is left sub-tree
+        if root.data < data:
+            return BinarySearchTree.search(root.rightChild, data)
+
+        #Case-3 data is in left sub-tree
+        return BinarySearchTree.search(root.leftChild, data)
+
+    @staticmethod
+    def insert(root: Node, data):
+        if root is None:
+            return Node(data)
+        else:
+            if root.data == data:
+                return root
+            elif root.data < data:
+                root.rightChild = BinarySearchTree.insert(root.rightChild, data)
+            else:
+                root.leftChild = BinarySearchTree.insert(root.leftChild, data)
+        return root
+
+    @staticmethod
+    def deleteNode(root, data):
+
+        #Case-1 empty case
+        if root is None:
+            return root
+
+        #Case-2 data is in left sub-tree
+        if data < root.data:
+            root.leftChild = BinarySearchTree.deleteNode(root.leftChild, data)
+
+        #Case-3 data is in right sub-tree
+        elif (data > root.data):
+            root.rightChild = BinarySearchTree.deleteNode(root.rightChild, data)
+
+        # Case-4 data is the root itself
+        else:
+
+            #Node with only one child or no child
+            #1. Node has only rightChile
+            if root.leftChild is None:
+                temp = root.rightChild
+                root = None
+                return temp
+            #2. Node has only leftChild
+            elif root.rightChild is None:
+                temp = root.leftChild
+                root = None
+                return temp
+
+            # Node with both children:
+            # get inorder successor smallest in the right subtree
+            temp = BinarySearchTree.getSuccessor(root.rightChild)
+
+            # Copy the inorder successor data the current node
+            root.data = temp.data
+
+            # Delete the inorder successor
+            root.rightChild = BinarySearchTree.deleteNode(root.rightChild, temp.data)
+
+        return root
+
+    @staticmethod
+    def getSuccessor(node):
+        current = node
+
+        # loop down to find the leftmost leaf
+        while current.leftChild is not None:
+            current = current.leftChild
+
+        return current
+
+
+# test code
+if __name__ == '__main__':
+    root = Node(70)
+    tree = BinarySearchTree(root)
+    tree.insert(tree.getRoot(), 20)
+    tree.insert(tree.getRoot(), 30)
+    BinarySearchTree.postorder(root)
+    tree.insert(tree.getRoot(), 100)
+    tree.insert(tree.getRoot(), 200)
+    tree.insert(tree.getRoot(), 90)
+    tree.insert(tree.getRoot(), 15)
+    tree.insert(tree.getRoot(), 85)
+    print("In-Order Traversal: ")
+    BinarySearchTree.inorder(tree.getRoot())
+    print("Pre-Order Traversal: ")
+    BinarySearchTree.preorder(tree.getRoot())
+    print("Post-Order Traversal: ")
+    BinarySearchTree.postorder(tree.getRoot())
+    #delete left leaf Node: 15
+    #BinarySearchTree.deleteNode(tree.getRoot(), 15)
+    #print("In-Order Traversal: ")
+    #BinarySearchTree.inorder(tree.getRoot())
+
+    # delete right leaf Node: 30
+    #BinarySearchTree.deleteNode(tree.getRoot(), 30)
+    #print("In-Order Traversal: ")
+    #BinarySearchTree.inorder(tree.getRoot())
+
+    # delete left with one child Node: 90
+    #BinarySearchTree.deleteNode(tree.getRoot(), 90)
+    #print("In-Order Traversal: ")
+    #BinarySearchTree.inorder(tree.getRoot())
+
+    # delete Node having two child nodes
+    #BinarySearchTree.deleteNode(tree.getRoot(), 100)
+    #print("In-Order Traversal: ")
+    #BinarySearchTree.inorder(tree.getRoot())
+
+
+```
