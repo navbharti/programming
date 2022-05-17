@@ -2773,3 +2773,154 @@ if __name__ == "__main__":
 
 
 ```
+
+## Non-Linear Data Structure 
+### Tree Data Structure
+#### Binary Tree Data Structure Implementation
+```python
+# class for Binary Tree Node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.rightChild = None
+        self.leftChild = None
+        print(f"{data} node created")
+
+
+# class for Binary Tree
+class BinaryTree:
+    def __init__(self, root=None):
+        self.__root = root
+        print("Binary Tree is created!!!")
+
+    def getRoot(self):
+        return self.__root
+
+    # inorder traversal
+    @staticmethod
+    def inorder(node: Node):
+        if node is None:
+            return
+        else:
+            BinaryTree.inorder(node.leftChild)
+            print(f"{node.data}", end=" ")
+            BinaryTree.inorder(node.rightChild)
+
+    # preorder traversal
+    @staticmethod
+    def preorder(node: Node):
+        if node is None:
+            return
+        else:
+            print(f"{node.data}", end=" ")
+            BinaryTree.preorder(node.leftChild)
+            BinaryTree.inorder(node.rightChild)
+
+    # post order traversal
+    @staticmethod
+    def postorder(node: Node):
+        if node is None:
+            return
+        else:
+            BinaryTree.postorder(node.leftChild)
+            BinaryTree.postorder(node.rightChild)
+            print(f"{node.data}", end=" ")
+
+    def insert(self, data):
+        # case-1 tree empty case
+        if self.__root is None:
+            self.__root = Node(data)
+            return
+        # case-2 non-empty case
+        queue = []
+        queue.append(self.__root)
+        while len(queue) > 0:
+            temp = queue[0]
+            queue.pop(0)
+
+            if temp.leftChild is None:
+                temp.leftChild = Node(data)
+                break
+            else:
+                queue.append(temp.leftChild)
+            if temp.rightChild is None:
+                temp.rightChild = Node(data)
+                break
+            else:
+                queue.append(temp.rightChild)
+
+    # helper method to delete a node with data
+    def deleteNode(self, data):
+        if self.__root is None:
+            return None
+        if self.__root.leftChild is None and self.__root.rightChild is None:
+            if self.__root.data == data:
+                return None
+            else:
+                return self.__root
+        node = None
+        queue = []
+        queue.append(self.__root)
+        temp = None
+        while len(queue) > 0:
+            temp = queue.pop(0)
+            if temp.data == data:
+                node = temp
+            if temp.leftChild is not None:
+                queue.append(temp.leftChild)
+            if temp.rightChild is not None:
+                queue.append(temp.rightChild)
+        if node is not None:
+            value = temp.data
+            #print(f"{temp.data} is marked to delete")
+            self.__deleteHelper(temp)
+            node.data = value
+            #print(f"{node.data} is deleted")
+        return
+
+    # method to delete a node
+    def __deleteHelper(self, node):
+        queue = []
+        queue.append(self.__root)
+        while len(queue) > 0:
+            temp = queue.pop(0)
+            if temp is node:
+                temp = None
+                return
+            if temp.rightChild:
+                if temp.rightChild is node:
+                    temp.rightChild = None
+                    return
+                else:
+                    queue.append(temp.rightChild)
+            if temp.leftChild:
+                if temp.leftChild is node:
+                    temp.leftChild = None
+                    return
+                else:
+                    queue.append(temp.leftChild)
+
+
+# test code
+if __name__ == '__main__':
+    root = Node(10)
+    node1 = Node(15)
+    node2 = Node(9)
+    root.rightChild = node2
+    root.leftChild = node1
+    node3 = Node(30)
+    node1.leftChild = node3
+    print("In-Order Traversal: ")
+    BinaryTree.inorder(root)
+    print("Pre-Order Traversal: ")
+    BinaryTree.preorder(root)
+    print("Post-Order Traversal: ")
+    BinaryTree.postorder(root)
+    tree = BinaryTree(root)
+    tree.insert(100)
+    tree.insert(200)
+    BinaryTree.inorder(tree.getRoot())
+    print()
+    tree.deleteNode(30)
+    BinaryTree.inorder(tree.getRoot())
+```
