@@ -2694,3 +2694,82 @@ if __name__ == "__main__":
     print(f"{ans} is Deleted")
     stack.display()
 ```
+
+#### Queue Implementation through Singly Linked List
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+# class for Queue Implementation through Singly Linked List
+class Queue:
+    def __init__(self, node=None):
+        self.__head = node
+        print("new Queue is created!!!")
+
+
+    def enqueue(self, data):
+        # case-1 list is empty
+        if self.__head is None:
+            self.__head = Node(data)
+            print(f"{data} is added to rear!!!")
+            return
+        # case-2 else case
+        else:
+            # create temp node to traverse to last node
+            temp = self.__head
+            # iterate till last node
+            while temp.next is not None:
+                temp = temp.next
+            newNode = Node(data)
+            temp.next = newNode
+            print(f"{data} is added to rear!!!")
+
+
+    # method to delete first node
+    def dequeue(self):
+        # case-1 empty case
+        if self.__head is None:
+            print("Queue is Empty!!!")
+            return
+        # case-2 else case
+        else:
+            temp = self.__head
+            self.__head = self.__head.next
+            temp.next = None
+            print(f"\n{temp.data} is being deleted from front!!!")
+            del temp
+
+    # method to display singly linked list
+    def display(self):
+        # case-1 empty case
+        if self.__head is None:
+            print("Queue is Empty!!!")
+            return
+        else:
+            temp = self.__head
+            while temp is not None:
+                print(temp.data, end=" -> ")
+                temp = temp.next
+
+
+# test code
+if __name__ == "__main__":
+    node1 = Node(15)
+    sll = Queue(node1)
+    sll.display()
+    sll.enqueue(100)
+    sll.display()
+    sll.enqueue(50)
+    sll.display()
+    sll.enqueue(150)
+    sll.display()
+    sll.enqueue(25)
+    sll.display()
+    sll.dequeue()
+    sll.display()
+
+
+```
