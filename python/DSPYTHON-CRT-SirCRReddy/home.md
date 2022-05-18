@@ -3095,3 +3095,26 @@ if __name__ == '__main__':
 
 
 ```
+
+#### Adjacency Matrix in Python
+
+```python
+def isEdgePresent(src, dst):
+    if adj[src][dst] == 1:
+        print(f"Yes {src} and {dst} are connected")
+    else:
+        print(f"No {src} and {dst} are not connected")    
+    
+#test code
+adj = [[0, 1, 0, 0, 1],
+       [1, 0, 1, 1, 1],
+       [0, 1, 0, 1, 0],
+       [0, 1, 1, 0, 1],
+       [1, 1, 0, 1, 0]]
+
+isEdgePresent(4, 3)
+isEdgePresent(1, 3)
+isEdgePresent(0, 4)
+isEdgePresent(0, 3)
+
+```
